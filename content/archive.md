@@ -6,13 +6,22 @@ summary: archives
 
 params:
   homeInfoParams:
-    Title: Hi there wave
-    Content: Can be Info, links, about...
+    Title: "Hello, I'm [Your Name] 👋"
+    Content: >
+      Welcome to my personal website! I'm a [your profession/role] passionate about [your interests].
+      
+      - 🔭 Currently working on: [current project/work]
+      - 🌱 Learning: [technologies/skills you're learning]
+      - 💬 Ask me about: [your expertise areas]
+      - 📫 How to reach me: [your preferred contact method]
 
-  socialIcons: # optional
-    - name: "<platform>"
-      url: "<link>"
-    - name: "<platform 2>"
-      url: "<link2>"
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/yourusername"
+    - name: "linkedin"
+      url: "https://linkedin.com/in/yourusername"
+    # Add or remove social icons as needed
 ---
+
+
 
