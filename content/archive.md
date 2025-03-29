@@ -16,12 +16,14 @@ params:
       - 📫 How to reach me: [your preferred contact method]
 
   socialIcons:
+    - name: "scholar"
+      url: "https://linkedin.com/in/yourusername"
     - name: "github"
       url: "https://github.com/yourusername"
     - name: "linkedin"
       url: "https://linkedin.com/in/yourusername"
+
     # Add or remove social icons as needed
 ---
-
 
 

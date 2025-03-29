@@ -25,6 +25,14 @@ theme = 'PaperMod'
     name = "Projects"
     url = "projects"
 
+    [[params.profileMode.buttons]]
+    name = "Learnings"
+    url = "Learnings"
+
+  [[params.socialIcons]]
+  name = "googlescholar"
+  url = "https://scholar.google.com/citations?user=sUNQUA0AAAAJ&authuser=1&oi=ao"
+
   [[params.socialIcons]]
   name = "github"
   url = "https://github.com/Weicheng-Ye"
