@@ -27,7 +27,7 @@ theme = 'PaperMod'
 
     [[params.profileMode.buttons]]
     name = "Learnings"
-    url = "Learnings"
+    url = "learnings" 
 
   [[params.socialIcons]]
   name = "googlescholar"
@@ -44,6 +44,31 @@ theme = 'PaperMod'
   # [[params.socialIcons]]
   # name = "email"
   #url = "mailto:victorye963 [at] gmail.com"
+
+  # Main menu configuration
+  [[menu.main]]
+  identifier = "home"
+  name = "Home"
+  url = "/"
+  weight = 10
+
+  [[menu.main]]
+  identifier = "publications"
+  name = "Publications"
+  url = "/publications/"
+  weight = 20
+
+  [[menu.main]]
+  identifier = "learnings"
+  name = "Learnings"
+  url = "/learnings/"
+  weight = 30
+
+  [[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 40
 
 # Other optional customizations
 ShowReadingTime = true
