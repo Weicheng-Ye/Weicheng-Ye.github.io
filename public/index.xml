@@ -20,7 +20,12 @@
       <link>http://localhost:1313/myblog/learnings/yt/</link>
       <pubDate>Sat, 29 Mar 2025 15:26:38 -0700</pubDate>
       <guid>http://localhost:1313/myblog/learnings/yt/</guid>
-      <description>&lt;h2 id=&#34;academic--educational&#34;&gt;Academic &amp;amp; Educational&lt;/h2&gt;
+      <description>&lt;h3 id=&#34;computer-science-tools&#34;&gt;Computer Science Tools&lt;/h3&gt;
+&lt;h4 id=&#34;creating-website-using-hugo&#34;&gt;Creating Website Using Hugo&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/playlist?list=PLeiDFxcsdhUrzkK5Jg9IZyiTsIMvXxKZP&#34;&gt;Featuring PaperMod&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;academic--educational&#34;&gt;Academic &amp;amp; Educational&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;Expanding knowledge through expert lectures and explanations&lt;/em&gt;&lt;/p&gt;
 &lt;h3 id=&#34;physics-lectures&#34;&gt;Physics Lectures&lt;/h3&gt;
 &lt;ul&gt;
@@ -34,13 +39,14 @@
 &lt;p&gt;Richard Feynman&amp;rsquo;s perspective on finding beauty in scientific understanding
 [CC] English subtitles with full transcript&lt;/p&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;computer-science-tutorials&#34;&gt;Computer Science Tutorials&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=SzJ46YA_RaA&#34;&gt;Map of Computer Science&lt;/a&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Visual journey through the major fields and concepts in computer science
-[CC] Multiple language subtitles + auto-generated captions&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>My 1st post</title>
+      <link>http://localhost:1313/myblog/posts/</link>
+      <pubDate>Tue, 15 Sep 2020 11:30:03 +0000</pubDate>
+      <guid>http://localhost:1313/myblog/posts/</guid>
+      <description>Desc Text.</description>
     </item>
     <item>
       <title></title>
