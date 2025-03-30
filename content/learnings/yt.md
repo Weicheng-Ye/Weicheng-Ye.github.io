@@ -1,7 +1,7 @@
 ---
 date: '2025-03-29T15:26:38-07:00'
 draft: true
-title: 'Youtube Learning Resources'
+title: 'Youtube/Online Learning Resources'
 
 showToc: true
 TocOpen: false
@@ -25,6 +25,7 @@ UseHugoToc: true
 
 #### Creating Website Using Hugo
 - [Featuring PaperMod](https://www.youtube.com/playlist?list=PLeiDFxcsdhUrzkK5Jg9IZyiTsIMvXxKZP)
+- [Hugo + Github Deploy](https://www.cnblogs.com/liumylay/articles/17936667.html)
 
 ### Academic & Educational
 *Expanding knowledge through expert lectures and explanations*
