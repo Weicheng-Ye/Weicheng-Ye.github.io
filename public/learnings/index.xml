@@ -9,7 +9,7 @@
     <lastBuildDate>Sat, 29 Mar 2025 15:26:38 -0700</lastBuildDate>
     <atom:link href="http://localhost:1313/myblog/learnings/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Youtube Learning Resources</title>
+      <title>Youtube/Online Learning Resources</title>
       <link>http://localhost:1313/myblog/learnings/yt/</link>
       <pubDate>Sat, 29 Mar 2025 15:26:38 -0700</pubDate>
       <guid>http://localhost:1313/myblog/learnings/yt/</guid>
@@ -17,6 +17,7 @@
 &lt;h4 id=&#34;creating-website-using-hugo&#34;&gt;Creating Website Using Hugo&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.youtube.com/playlist?list=PLeiDFxcsdhUrzkK5Jg9IZyiTsIMvXxKZP&#34;&gt;Featuring PaperMod&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/liumylay/articles/17936667.html&#34;&gt;Hugo + Github Deploy&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;academic--educational&#34;&gt;Academic &amp;amp; Educational&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;Expanding knowledge through expert lectures and explanations&lt;/em&gt;&lt;/p&gt;
