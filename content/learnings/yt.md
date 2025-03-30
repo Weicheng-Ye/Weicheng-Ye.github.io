@@ -4,6 +4,9 @@ draft = true
 title = 'Youtube Learning Resources'
 +++
 
+### Creating Website Using Hugo
+- [Featuring PaperMod](https://www.youtube.com/playlist?list=PLeiDFxcsdhUrzkK5Jg9IZyiTsIMvXxKZP)
+
 ## Academic & Educational
 *Expanding knowledge through expert lectures and explanations*
 
