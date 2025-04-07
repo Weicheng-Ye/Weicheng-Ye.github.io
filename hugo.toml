@@ -54,8 +54,8 @@ theme = 'PaperMod'
 
   [[menu.main]]
   identifier = "publications"
-  name = "Publications"
-  url = "/publications/"
+  name = "Projects"
+  url = "/projects/"
   weight = 20
 
   [[menu.main]]
