@@ -1,6 +1,6 @@
 ---
 title: "Publications"
-date: 2020-09-15T11:30:03+00:00
+# date: 2020-09-15T11:30:03+00:00
 weight: 1
 showToc: true
 TocOpen: false
@@ -30,7 +30,7 @@ UseHugoToc: true
 
 - **Weicheng Ye**, Meng Guo, Yin-Chen He, Chong Wang, and Liuju Zou. "Topological Characterization of Lieb-Schultz-Mattis Constraints and Applications to Symmetry-enriched Quantum Criticality." [*SciPost Physics*](https://doi.org/10.21468/SciPostPhys.13.3.066) 13.3 (2022): 066. [[arXiv:2111.12097](https://arxiv.org/abs/2111.12097)]
 
-- Chunxiao Liu, and **Weicheng Ye**. ``Crystallography, Group Cohomology, and Lieb-Schultz-Mattis Constraints.'' [*arXiv preprint* arXiv:2410.03607](https://arxiv.org/abs/2410.03607) (2024).
+- Chunxiao Liu, and **Weicheng Ye**. "Crystallography, Group Cohomology, and Lieb-Schultz-Mattis Constraints." [*arXiv preprint* arXiv:2410.03607](https://arxiv.org/abs/2410.03607) (2024).
 
 
 ### Anomaly of 2D Topological Order

@@ -1,14 +1,14 @@
 ---
 title: "Current Projects"
-date: 2024-03-29T15:26:38-07:00
 weight: 2  # Weight 2 since your publications has weight 1
+# date: 2020-09-15T11:30:03+00:00
 showToc: true
 TocOpen: false
 draft: false
 hidemeta: false
 comments: false
 description: "My ongoing research projects and works in progress"
-disableHLJS: true
+disableHLJS: true # to disable highlightjs
 disableShare: false
 disableHLJS: false
 hideSummary: false
@@ -21,33 +21,17 @@ ShowRssButtonInSectionTermList: true
 UseHugoToc: true
 ---
 
-### Ongoing Research
+### Physics
 
-#### Quantum Many-Body Systems
-- **Current Focus**: Investigation of symmetry-enriched topological orders
-- **Related Publication**: "Classification of symmetry-enriched topological quantum spin liquids" (*Physical Review X*, 2024)
-- **Future Directions**:
-  - Extension to higher dimensions
-  - Applications to quantum computing
+#### Machine Learning and Quantum Many-Body Systems
+- **Current Focus**: Identifying phases through shadow data and machine learning
+- **Related Work**: None
+- **Collaboration**: With Yijian Zou, Shiyu Zhou and Shuwei Liu
 
 #### Topological Quantum Field Theory
-- **Active Research**: Study of anomalies and boundary conditions
-- **Recent Work**: "Higher obstructions to conformal boundary conditions and lattice realizations" (arXiv:2410.11757)
-- **Collaboration**: With various institutions and research groups
+- **Active Research**: Study of anomalies in (3+1)-D topological orders and ways to trivialize the anomalies
+- **Recent Work**: "Bosonization and Anomaly Indicators of (2+1)-D Fermionic Topological Orders." (arXiv:2312.13341) a (2+1)-D prelude of the story
+- **Collaboration**: With Arun Debray and Matthew Yu
 
-### Technical Projects
+### Computer Science
 
-#### Computational Methods
-- Development of numerical tools for quantum systems
-- Implementation of new algorithms for topological calculations
-- <span style="color: red;">Upcoming: Machine learning applications in quantum physics</span>
-
-### Resources
-- Code repositories
-- Simulation data
-- Lecture notes and presentations
-
-### Future Research Directions
-- Quantum information and error correction
-- Novel topological phases of matter
-- Interdisciplinary applications 
