@@ -64,12 +64,6 @@ theme = 'PaperMod'
   url = "/learnings/"
   weight = 30
 
-  [[menu.main]]
-  identifier = "about"
-  name = "About"
-  url = "/about/"
-  weight = 40
-
 # Other optional customizations
 ShowReadingTime = true
 ShowShareButtons = true
