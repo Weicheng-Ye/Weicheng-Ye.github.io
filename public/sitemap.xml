@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>http://localhost:1313/myblog/projects/publication/</loc>
-    <lastmod>2020-09-15T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/myblog/projects/current-projects/</loc>
-  </url><url>
-    <loc>http://localhost:1313/myblog/learnings/</loc>
-    <lastmod>2025-03-29T15:26:38-07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/myblog/</loc>
-    <lastmod>2025-03-29T15:26:38-07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/myblog/learnings/yt/</loc>
-    <lastmod>2025-03-29T15:26:38-07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/myblog/posts/</loc>
-    <lastmod>2020-09-15T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/myblog/projects/</loc>
-    <lastmod>2020-09-15T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/myblog/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/myblog/tags/</loc>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>http://localhost:1313/en/sitemap.xml</loc>
+    
+      <lastmod>2025-02-28T08:05:05+01:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://localhost:1313/es/sitemap.xml</loc>
+    
+      <lastmod>2024-12-01T00:00:00+01:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>http://localhost:1313/fr/sitemap.xml</loc>
+    
+      <lastmod>2024-01-01T00:00:00+01:00</lastmod>
+    
+  </sitemap>
+  
+</sitemapindex>
