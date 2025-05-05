@@ -69,6 +69,7 @@ title = 'Weicheng Ye - Personal Website'
 description = 'Personal website of Weicheng Ye'
 images = ['/img/og-img.png']
 sections = [
+  "showcase",
   "about",
   "education",
   "experience",
