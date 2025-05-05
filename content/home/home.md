@@ -6,10 +6,10 @@ draft = false
 
 
 {{< showcase-section
-    title="Showcase section"
-    subtitle="Subtitle - coming from <code>home.md</code>"
+    title="Weicheng Ye"
+    subtitle="Live long and prosper"
     buttonText="Email"
-    description="<strong>Strong</strong> and normal text. This comes from <a href='https://github.com/zetxek/adritian-demo/blob/main/content/home/home.md?plain=1'><code>home.md</code></a>, using the <code>showcase-section</code> shortcode.<br/>Below you can see the social links, provided by the <code>platform-links</code> shortcode."
+    description="<strong style='color: #007bff'>News</strong> - I am currently in Chengdu, China, drop me a message if you want to chat!<br/><br/><strong style='color: #007bff'>News</strong> - My paper <em>Crystallography, Group Cohomology, and Lieb-Schultz-Mattis Constraints</em> </a> with Chunxiao Liu</a> is accepted by Scipost! I want to sincerely thank Chunxiao for his brilliance, persistence, and hard work throughout this project, during which he singlehandedly tackled all the technical challenges. <br/>Do check out <a href='https://chxliu.github.io/'>Chunxiao's personal webpage</a> for his personal reflections on this huge project, and the <a href='https://scipost.org/submissions/2410.03607v2/'>Scipost submission page</a> for referee reports, which we deeply appreciate."
     imgSrc="images/showcase/showcase.png"
     imgScale="0.5"
  >}}
@@ -23,18 +23,7 @@ draft = false
     {{< link icon="dribbble" url="#" >}}
     {{< link icon="behance" url="#" >}}
     {{< link icon="youtube" url="#" >}}
-    {{< link icon="instagram" url="https://www.instagram.com/zetxek/" >}}
-    {{< link icon="square-facebook" url="https://www.facebook.com/zetxek/" >}}
-    {{< link icon="codepen" url="#" >}}
-    {{< link icon="yelp" url="https://www.yelp.com/" >}}
-    {{< link icon="bluesky" url="https://www.bluesky.com/" >}}
-    {{< link icon="threads" url="https://www.threads.net/" >}}
-    {{< link icon="face-smile" url="https://www.adrianmoreno.info/" >}}
-    {{< link icon="user" url="https://www.adrianmoreno.info/" >}}
-    {{< link icon="quote-left" url="https://www.adrianmoreno.info/" >}}
-    {{< link icon="cloud-arrow-down" url="https://www.adrianmoreno.info/" >}}
-    {{< link icon="square-xing" url="https://www.adrianmoreno.info/" >}}
-
+    
 {{< /platform-links >}}
 
 {{< /showcase-section >}}

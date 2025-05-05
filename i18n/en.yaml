@@ -1,25 +1,25 @@
 ## Meta tags
 - id: "meta_title"
-  translation: "Adritian - a high performance hugo theme by Adrián Moreno"
+  translation: "Weicheng Ye - Personal Website"
 - id: "meta_description"
-  translation: "This hugo theme (Adritian) is based on Bootstrap and has features that make it suitable for a personal site, a portfolio or other kind of Single Page Applications."
+  translation: "Personal website of Weicheng Ye"
 - id: "meta_keywords"
-  translation: "hugo, theme, bootstrap, adritian, adrian moreno, personal site, portfolio, single page application"
+  translation: "weicheng ye, personal site, portfolio"
 - id: "meta_author"
-  translation: "Adrián Moreno Peña"
+  translation: "Weicheng Ye"
 - id: "meta_image"
   translation: "/img/general/og-image.jpg"
 
 ## Header
 
 - id: "logo_alt"
-  translation: "Adritian logo"
+  translation: "Weicheng Ye logo"
 
 - id: "logo_text1"
-  translation: "Adritian"
+  translation: "Weicheng"
 
 - id: "logo_text2"
-  translation: "Demo"
+  translation: "Ye"
 
 ## General
 - id: "skipToMainContent"
@@ -30,7 +30,7 @@
 
 ## Footer
 - id: "footer_notice"
-  translation: "© Adritian. Free Hugo theme by Adrián Moreno Peña."
+  translation: "© Weicheng Ye. All rights reserved."
 
 - id: "language"
   translation: "Language"
@@ -47,10 +47,10 @@
 
 ## Homepage head title
 - id: "head_title"
-  translation: "Demo site for Adritian - a high performance hugo theme by Adrián Moreno"
+  translation: "Weicheng Ye - Personal Website"
 
 - id: "head_description"
-  translation: "This hugo theme (Adritian) is based on Bootstrap and has features that make it suitable for a personal site, a portfolio or other kind of Single Page Applications."
+  translation: "Personal website of Weicheng Ye"
 
 
 ## Blog
