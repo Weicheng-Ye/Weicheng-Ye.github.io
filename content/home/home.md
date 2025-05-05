@@ -6,7 +6,7 @@ draft = false
 
 
 {{< showcase-section
-    title="Weicheng Ye"
+    title="Weicheng Ye's Personal Website"
     subtitle="Live long and prosper"
     buttonText="Email"
     description="<strong style='color: #007bff'>News</strong> - I am currently in Chengdu, China, drop me a message if you want to chat!<br/><br/><strong style='color: #007bff'>News</strong> - My paper <em>Crystallography, Group Cohomology, and Lieb-Schultz-Mattis Constraints</em> </a> with Chunxiao Liu</a> is accepted by Scipost! I want to sincerely thank Chunxiao for his brilliance, persistence, and hard work throughout this project, during which he singlehandedly tackled all the technical challenges. <br/>Do check out <a href='https://chxliu.github.io/'>Chunxiao's personal webpage</a> for his personal reflections on this huge project, and the <a href='https://scipost.org/submissions/2410.03607v2/'>Scipost submission page</a> for referee reports, which we deeply appreciate."
