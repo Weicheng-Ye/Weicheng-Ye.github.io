@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Weicheng Ye</title>
-    <link>http://localhost:57799/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Weicheng Ye</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 14 Feb 2025 14:38:33 +0200</lastBuildDate>
-    <atom:link href="http://localhost:57799/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Adritian</title>
-      <link>http://localhost:57799/tags/adritian/</link>
+      <link>http://localhost:1313/tags/adritian/</link>
       <pubDate>Fri, 14 Feb 2025 14:38:33 +0200</pubDate>
-      <guid>http://localhost:57799/tags/adritian/</guid>
+      <guid>http://localhost:1313/tags/adritian/</guid>
       <description></description>
     </item>
     <item>
       <title>Guide</title>
-      <link>http://localhost:57799/tags/guide/</link>
+      <link>http://localhost:1313/tags/guide/</link>
       <pubDate>Fri, 14 Feb 2025 14:38:33 +0200</pubDate>
-      <guid>http://localhost:57799/tags/guide/</guid>
+      <guid>http://localhost:1313/tags/guide/</guid>
       <description></description>
     </item>
     <item>
       <title>Lorem-Ipsum</title>
-      <link>http://localhost:57799/tags/lorem-ipsum/</link>
+      <link>http://localhost:1313/tags/lorem-ipsum/</link>
       <pubDate>Fri, 21 Jun 2024 14:38:33 +0200</pubDate>
-      <guid>http://localhost:57799/tags/lorem-ipsum/</guid>
+      <guid>http://localhost:1313/tags/lorem-ipsum/</guid>
       <description></description>
     </item>
     <item>
       <title>Sample</title>
-      <link>http://localhost:57799/tags/sample/</link>
+      <link>http://localhost:1313/tags/sample/</link>
       <pubDate>Fri, 21 Jun 2024 14:38:33 +0200</pubDate>
-      <guid>http://localhost:57799/tags/sample/</guid>
+      <guid>http://localhost:1313/tags/sample/</guid>
       <description></description>
     </item>
   </channel>
