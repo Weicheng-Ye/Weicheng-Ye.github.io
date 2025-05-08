@@ -9,31 +9,22 @@ draft = false
     title="Weicheng Ye's Personal Website"
     subtitle="Live long and prosper"
     buttonText="Email"
-    description="<strong style='color: #007bff'>News</strong> - I am currently in Chengdu, China, drop me a message if you want to chat!<br/><br/><strong style='color: #007bff'>News</strong> - My paper <em>Crystallography, Group Cohomology, and Lieb-Schultz-Mattis Constraints</em> </a> with Chunxiao Liu</a> is accepted by Scipost! I want to sincerely thank Chunxiao for his brilliance, persistence, and hard work throughout this project, during which he singlehandedly tackled all the technical challenges. <br/>Do check out <a href='https://chxliu.github.io/'>Chunxiao's personal webpage</a> for his personal reflections on this huge project, and the <a href='https://scipost.org/submissions/2410.03607v2/'>Scipost submission page</a> for referee reports, which we deeply appreciate."
+    description="<strong style='color: #007bff'>News</strong> - I am currently in Chengdu, China, drop me a message if you want to chat!<br/><br/><strong style='color: #007bff'>News</strong> - My paper <em>Crystallography, Group Cohomology, and Lieb-Schultz-Mattis Constraints</em> </a> with Chunxiao Liu</a> is accepted by Scipost! I want to sincerely thank Chunxiao for his brilliance, persistence, and hard work throughout this project, during which he singlehandedly tackled all the technical challenges. <br/>Do check out <a href='https://chxliu.github.io/'>Chunxiao's personal webpage</a> for his personal reflections on this huge project, and the <a href='https://scipost.org/submissions/2410.03607v2/'>Scipost submission page</a> for referee reports, which we deeply appreciate. <br/><br/><strong style='color:rgb(255, 0, 8)'>Contact</strong> - My email address is victorye963 at gmail, also check the following links for my personal profiles elsewhere"
     imgSrc="images/showcase/showcase.png"
     imgScale="0.5"
  >}}
 
 {{< platform-links >}}
-    {{< link icon="square-facebook" url="https://facebook.com/yourpage" >}}
-    {{< link icon="square-twitter" url="https://twitter.com/yourpage" >}}
-    {{< link icon="linkedin" url="https://www.linkedin.com/in/adrianmoreno/" >}}
-    {{< link icon="square-github" url="https://github.com/zetxek" >}}
-    {{< link icon="x-twitter" url="https://twitter.com/zetxek" >}}
-    {{< link icon="dribbble" url="#" >}}
-    {{< link icon="behance" url="#" >}}
-    {{< link icon="youtube" url="#" >}}
-    
+    {{< link icon="user" url="https://scholar.google.com/citations?user=sUNQUA0AAAAJ&hl=zh-CN&oi=ao" >}}
+    {{< link icon="square-github" url="https://github.com/Weicheng-Ye" >}}
+    {{< link icon="linkedin" url="https://www.linkedin.com/in/ye-weicheng-241626243/" >}}
 {{< /platform-links >}}
 
 {{< /showcase-section >}}
 
 {{< about-section
     title="About me"
-    content="This content is using the <code>about-section</code> shortcode. <br/>You can write <code>HTML</code>, as long as you <em>wrap it</em> accordingly. "
-    button_icon="icon-user"
-    button_text="You can edit the text, link and icon"
-    button_url="https://www.google.com"
+    content="I am currently a postdoctoral fellow at the Stewart Blusson Quantum Matter Institute at the University of British Columbia<br/><br/>My research focuses on understanding <em>quantum phases</em><br/>--Mathematical theory behind quantum phases<br/>--Characterization and identification of quantum phases<br/>--Applying the concepts and ideas of quantum phases to other statistical systems<br/>My research features interdisciplinary methods, including an extensive use of <em>algebraic topology</em> and <em>machine learning</em><br/>I love traveling and meeting new friends! Let's chat when we are in the same city!"
     imgSrc="images/about/user-picture.png"
     imgScale="0.5"
  >}}
