@@ -9,7 +9,7 @@ draft = false
     title="Weicheng Ye's Personal Website"
     subtitle="Live long and prosper"
     buttonText="Email"
-    description="<strong style='color: #007bff'>News</strong> - I am currently in Chengdu, China, drop me a message if you want to chat!<br/><br/><strong style='color: #007bff'>News</strong> - My paper <em>Crystallography, Group Cohomology, and Lieb-Schultz-Mattis Constraints</em> </a> with Chunxiao Liu</a> is accepted by Scipost! I want to sincerely thank Chunxiao for his brilliance, persistence, and hard work throughout this project, during which he singlehandedly tackled all the technical challenges. <br/>Do check out <a href='https://chxliu.github.io/'>Chunxiao's personal webpage</a> for his personal reflections on this huge project, and the <a href='https://scipost.org/submissions/2410.03607v2/'>Scipost submission page</a> for referee reports, which we deeply appreciate. <br/><br/><strong style='color:rgb(255, 0, 8)'>Contact</strong> - My email address is victorye963 at gmail, also check the following links for my personal profiles elsewhere"
+    description="<strong style='color: #007bff'>News</strong> - I am currently in Chengdu, China, drop me a message if you want to chat!<br/><br/><strong style='color: #007bff'>News</strong> - My paper <a href='https://arxiv.org/abs/2312.13341'><em>Bosonization and Anomaly Indicators of (2+1)-D Fermionic Topological Orders</em><a> is accepted by Communications in Mathematical Physics!</a> I want to thank both of my collaborators, <a href='https://adebray.github.io'>Arun Debray</a> and <a href='https://www.maths.ox.ac.uk/people/matthew.yu'>Matthew Yu</a>, for this fun collaborations, from which I learned a lot! This is also my first project regarding homotopy theory, and I finally understand what this is about.<br/><br/><strong style='color: #007bff'>News</strong> - My paper <a href='https://arxiv.org/abs/2410.03607v2'><em>Crystallography, Group Cohomology, and Lieb-Schultz-Mattis Constraints</em> </a> with Chunxiao Liu</a> is accepted by Scipost! I sincerely thank Chunxiao for his brilliance, persistence, and hard work throughout this project, during which he singlehandedly tackled all the technical challenges. <br/>Check out <a href='https://chxliu.github.io/'>Chunxiao's personal webpage</a> for his personal reflections on this huge project, and the <a href='https://scipost.org/submissions/2410.03607v2/'>Scipost submission page</a> for referee reports, which we deeply appreciate. <br/><br/><strong style='color:rgb(255, 0, 8)'>Contact</strong> - My email address is victorye963 at gmail, also check the following links for my personal profiles elsewhere<br/> -- <a href='https://scholar.google.com/citations?user=sUNQUA0AAAAJ&hl=zh-CN&oi=ao'>Google Scholar</a><br/> -- <a href='https://github.com/Weicheng-Ye'>Github</a><br/> -- <a href='https://www.linkedin.com/in/ye-weicheng-241626243/'>Linkedin</a>"
     imgSrc="images/showcase/showcase.png"
     imgScale="0.5"
  >}}
@@ -30,7 +30,9 @@ draft = false
  >}}
 
 {{< education-list
-    title="Formal Education (education-list)" >}}
+    title="Education"
+    content="Peking University"
+>}}
 
 {{< experience-section
     title="My job experience (title)"
