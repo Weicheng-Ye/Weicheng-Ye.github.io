@@ -1,5 +1,5 @@
 ---
-title: "Lorem ipsum"
+title: "Weicheng Ye's Personal Homepage"
 ---
 
 # About Me {#about-me}
