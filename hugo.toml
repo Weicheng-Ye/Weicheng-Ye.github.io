@@ -21,9 +21,9 @@ disableKinds = ["taxonomy", "term", "RSS"]
     title = 'Zero'
 
     [languages.en.params]
-      author = "Lorem ipsum"
-      description = "Ph.D Student in [Lorem ipsum College](https://example.com). Focusing on Computer Vision and Deep Learning."
-      motto = "Most things in the world are not that important. But truth and love matter."
+      author = "Weicheng (Victor) Ye"
+      description = "Postdoctoral Fellow at the University of British Columbia"
+      motto = "Mathematics, Physics, and Computer Science"
     
     [[languages.en.menu.main]]
       name = 'About Me'
@@ -38,21 +38,17 @@ disableKinds = ["taxonomy", "term", "RSS"]
       url = '#publications'
       weight = 3
     [[languages.en.menu.main]]
-      name = 'Honors and Awards'
-      url = '#honors-and-awards'
-      weight = 4
-    [[languages.en.menu.main]]
       name = 'Educations'
       url = '#educations'
-      weight = 5
+      weight = 4
     [[languages.en.menu.main]]
       name = 'Invited Talks'
       url = '#invited-talks'
-      weight = 6
+      weight = 5
     [[languages.en.menu.main]]
       name = 'Internships'
       url = '#internships'
-      weight = 7
+      weight = 6
       
   [languages.zh]
     languageName = '中文'
@@ -60,9 +56,9 @@ disableKinds = ["taxonomy", "term", "RSS"]
     title = '学术主页'
     
     [languages.zh.params]
-      author = "王小明"
-      description = "某某大学博士生，专注于计算机视觉与深度学习"
-      motto = "世界上大部分事，都没有太大意义。真理与爱除外。"
+      author = "叶伟成"
+      description = "加拿大不列颠哥伦比亚大学博士后"
+      motto = "数学，物理，和计算机"
     
     [[languages.zh.menu.main]]
       name = '关于我'
@@ -77,21 +73,17 @@ disableKinds = ["taxonomy", "term", "RSS"]
       url = '#publications'
       weight = 3
     [[languages.zh.menu.main]]
-      name = '荣誉与奖项'
-      url = '#honors-and-awards'
-      weight = 4
-    [[languages.zh.menu.main]]
       name = '教育背景'
       url = '#educations'
-      weight = 5
+      weight = 4
     [[languages.zh.menu.main]]
       name = '受邀报告'
       url = '#invited-talks'
-      weight = 6
+      weight = 5
     [[languages.zh.menu.main]]
       name = '实习经历'
       url = '#internships'
-      weight = 7
+      weight = 6
 
 [params]
   profilePicture = "images/profile.png"
@@ -99,24 +91,20 @@ disableKinds = ["taxonomy", "term", "RSS"]
   
   [[params.social]]
     name = "github"
-    url = "https://github.com/"
+    url = "https://github.com/Weicheng-Ye"
     icon = "fab fa-github"
   [[params.social]]
     name = "google-scholar"
-    url = "https://scholar.google.com/"
+    url = "https://scholar.google.com/citations?user=sUNQUA0AAAAJ&hl=zh-TW"
     icon = "fab fa-google-scholar"
   [[params.social]]
     name = "email"
-    url = "mailto:example@example.com"
+    url = "mailto:evictorye963@gmail.com"
     icon = "fas fa-envelope"
   [[params.social]]
     name = "linkedin"
-    url = "https://linkedin.com/"
+    url = "https://www.linkedin.com/in/ye-weicheng-241626243"
     icon = "fab fa-linkedin"
-  [[params.social]]
-    name = "zhihu"
-    url = "https://zhihu.com/"
-    icon = "fab fa-zhihu"
 
 [build]
   writeStats = false
