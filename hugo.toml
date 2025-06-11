@@ -19,6 +19,7 @@ disableKinds = ["taxonomy", "term", "RSS"]
     languageName = 'English'
     weight = 1
     title = 'Zero'
+    customCSS = ["css/custom.css"]
 
     [languages.en.params]
       author = "Weicheng (Victor) Ye"
@@ -46,14 +47,15 @@ disableKinds = ["taxonomy", "term", "RSS"]
       url = '#invited-talks'
       weight = 5
     [[languages.en.menu.main]]
-      name = 'Internships'
-      url = '#internships'
+      name = 'Blogs'
+      url = '/blogs'
       weight = 6
       
   [languages.zh]
     languageName = '中文'
     weight = 2
     title = '学术主页'
+    customCSS = ["css/custom.css"]
     
     [languages.zh.params]
       author = "叶伟成"
@@ -81,8 +83,8 @@ disableKinds = ["taxonomy", "term", "RSS"]
       url = '#invited-talks'
       weight = 5
     [[languages.zh.menu.main]]
-      name = '实习经历'
-      url = '#internships'
+      name = '博客'
+      url = '/blogs'
       weight = 6
 
 [params]

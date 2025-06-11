@@ -18,9 +18,11 @@ Hi I am Weicheng Ye 👋
 
 🤔 My research features interdisciplinary methods, including an extensive use of *algebraic topology* and *machine learning*
 
-📫 My email address is victorye963@gmail.com
+📫 My email address is victorye963 at gmail.com
 
 💬 I love traveling and meeting new friends! Let's chat when we are in the same city!
+
+<!-- 📝 Check out my [blog](/blogs) for more thoughts and updates! -->
 
 # 🔥 News {#news}
 
@@ -109,6 +111,3 @@ Hi I am Weicheng Ye 👋
 - *2023*, "On the Classification and Construction of Topological Quantum Spin Liquid", Postdoc Retreat, University of Chinese Academy of Sciences
 
 - *2023*, "Anomaly of Topological Order: Symmetry Fractionalization, TQFT and Lattice Realization", Fudan University
-
-# 💻 Internships {#internships}
-- *2019.05 - 2020.02*, [Lorem](https://github.com/), China.
