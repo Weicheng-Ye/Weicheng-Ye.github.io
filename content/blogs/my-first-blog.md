@@ -2,6 +2,7 @@
 title: "My First Blog Post"
 date: 2024-03-20
 draft: false
+summary: "Welcome to my blog where I share insights about quantum physics, mathematics, and academic life."
 ---
 
 # Welcome to My Blog
@@ -12,6 +13,8 @@ This is my first blog post. Here I will share my thoughts and experiences about:
 - Mathematical concepts
 - Academic life
 - And more!
+
+<!--more-->
 
 ## Why I Started This Blog
 

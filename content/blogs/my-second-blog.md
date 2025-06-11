@@ -2,6 +2,7 @@
 title: "My Second Blog Post"
 date: 2024-03-21
 draft: false
+summary: "Updates on my research, including quantum physics developments, mathematical concepts, and academic collaborations."
 ---
 
 # My Second Blog Post
@@ -16,6 +17,8 @@ In this post, I want to discuss:
 - Interesting mathematical concepts I've encountered
 - Thoughts on academic collaboration
 - Future research directions
+
+<!--more-->
 
 ## What's Next?
 

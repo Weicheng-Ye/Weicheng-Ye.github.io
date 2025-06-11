@@ -2,26 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/zero-academic-page-starter/blogs/</loc>
-    <lastmod>2024-03-21T00:00:00+00:00</lastmod>
+    <loc>http://localhost:55227/zero-academic-page-starter/blogs/</loc>
+    <lastmod>2025-06-11T17:20:25+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/zero-academic-page-starter/blogs/my-second-blog/</loc>
-    <lastmod>2024-03-21T00:00:00+00:00</lastmod>
+    <loc>http://localhost:55227/zero-academic-page-starter/blogs/my-second-blog/</loc>
+    <lastmod>2025-06-11T17:20:25+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/zero-academic-page-starter/blogs/my-first-blog/</loc>
-    <lastmod>2024-03-20T00:00:00+00:00</lastmod>
+    <loc>http://localhost:55227/zero-academic-page-starter/blogs/my-first-blog/</loc>
+    <lastmod>2025-06-11T17:20:25+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/zero-academic-page-starter/</loc>
-    <lastmod>2025-06-11T16:56:06+08:00</lastmod>
+    <loc>http://localhost:55227/zero-academic-page-starter/</loc>
+    <lastmod>2025-06-11T17:20:25+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="http://localhost:1313/zero-academic-page-starter/zh/"
+                href="http://localhost:55227/zero-academic-page-starter/zh/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/zero-academic-page-starter/"
+                href="http://localhost:55227/zero-academic-page-starter/"
                 />
   </url>
 </urlset>
