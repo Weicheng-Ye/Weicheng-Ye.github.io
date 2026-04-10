@@ -28,15 +28,25 @@ Hi I am Weicheng Ye 👋
 
 - I am currently in Guangzhou, China, and will travel to Hong Kong for one week and Boston for two weeks. Drop me a message if you want to chat!
 
-- &nbsp;🎉🎉 My paper <a href='https://arxiv.org/abs/2312.13341'><em>Bosonization and Anomaly Indicators of (2+1)-D Fermionic Topological Orders</em><a> is accepted by Communications in Mathematical Physics! I want to thank both of my collaborators, <a href='https://adebray.github.io'>Arun Debray</a> and <a href='https://www.maths.ox.ac.uk/people/matthew.yu'>Matthew Yu</a>, for this fun collaborations, from which I learned a lot! This is also my first project regarding homotopy theory, and I finally understand what this is about.
+- &nbsp;🎉🎉 My paper <a href='https://arxiv.org/abs/2501.18399'><em>Global structure in the presence of a topological defect</em><a> is accepted by Communications in Mathematical Physics! This is by second collaboration with <a href='https://adebray.github.io'>Arun Debray</a> and <a href='https://www.maths.ox.ac.uk/people/matthew.yu'>Matthew Yu</a> and I want to thank them again for the continual, fun collaborations! This paper is just built on the simple idea, i.e., how to incorporate tangential structures in generic topological defects.
 
 - &nbsp;🎉🎉 My paper <a href='https://arxiv.org/abs/2410.03607v2'><em>Crystallography, Group Cohomology, and Lieb-Schultz-Mattis Constraints</em> </a> with Chunxiao Liu</a> is accepted by Scipost! I sincerely thank Chunxiao for his brilliance, persistence, and hard work throughout this project, from which I truly respect. <br/>Check out <a href='https://chxliu.github.io/'>Chunxiao's personal webpage</a> for his personal reflections on this huge project, and the <a href='https://scipost.org/submissions/2410.03607v2/'>Scipost submission page</a> for referee reports, which we deeply appreciate. 
 
 # 📝 Publications {#publications}
 
+- ***[How to Build Anomalous (3+1)d Topological Quantum Field Theories](https://arxiv.org/abs/2510.24834)*** <br>
+  Arun Debray, **Weicheng Ye**, and Matthew Yu <br>
+  arXiv preprint (2025). <br>
+  <a href="https://arxiv.org/abs/2510.24834" class="no-trailing-icon"><img src="https://img.shields.io/badge/arXiv-2510.24834-b31b1b.svg?style=flat-square" alt="Arxiv-2510.24834"/></a>
+
+- ***[Universal quantum phase classification on quantum computers from machine learning](https://arxiv.org/abs/2508.04774)*** <br>
+  **Weicheng Ye**, Shuwei Liu, Shiyu Zhou, and Yijian Zou <br>
+  arXiv preprint (2025). <br>
+  <a href="https://arxiv.org/abs/2508.04774" class="no-trailing-icon"><img src="https://img.shields.io/badge/arXiv-2508.04774-b31b1b.svg?style=flat-square" alt="Arxiv-2508.04774"/></a>
+
 - ***[Global structure in the presence of a topological defect](https://arxiv.org/abs/2501.18399)*** <br>
   Arun Debray, **Weicheng Ye**, and Matthew Yu <br>
-  arXiv preprint (2023). <br>
+  arXiv preprint (2025). <br>
   <a href="https://arxiv.org/abs/2501.18399" class="no-trailing-icon"><img src="https://img.shields.io/badge/arXiv-2501.18399-b31b1b.svg?style=flat-square" alt="Arxiv-2501.18399"/></a>
 
 - ***[Higher obstructions to conformal boundary conditions and lattice realizations](https://arxiv.org/abs/2411.11757)*** <br>
@@ -52,12 +62,12 @@ Hi I am Weicheng Ye 👋
 
 - ***[Topological Holography for fermions](https://arxiv.org/abs/2404.19004)*** <br>
   Rui Wen, **Weicheng Ye**, and Andrew C. Potter <br>
-  arXiv preprint (2023). <br>
+  arXiv preprint (2024). <br>
   <a href="https://arxiv.org/abs/2404.19004" class="no-trailing-icon"><img src="https://img.shields.io/badge/arXiv-2404.19004-b31b1b.svg?style=flat-square" alt="Arxiv-2404.19004"/></a>
 
 - ***[Bosonization and Anomaly Indicators of (2+1)-D Fermionic Topological Orders](https://arxiv.org/abs/2312.13341)*** <br>
   Arun Debray, **Weicheng Ye**, and Matthew Yu <br>
-  Communications in Mathematical Physics (2023). <br>
+  Communications in Mathematical Physics 406, 178 (2025). <br>
   <a href="https://arxiv.org/abs/2312.13341" class="no-trailing-icon"><img src="https://img.shields.io/badge/arXiv-2312.13341-b31b1b.svg?style=flat-square" alt="Arxiv-2312.13341"/></a>
 
 - ***[Complexity and order in approximate quantum error-correcting codes](https://doi.org/10.1038/s41567-024-02621-x)*** <br>
@@ -109,8 +119,16 @@ Hi I am Weicheng Ye 👋
 # 💬 Invited Talks {#invited-talks}
 - *2024*, "Lieb-Schultz-Mattis constraints and anomaly in 2d and 3d", Applications of Generalized Symmetries and Topological Defects to Quantum Matter Workshop, Simons Center for Geometry and Physics
 
-- *2023*, "More Information from Lieb-Schultz-Mattis-Oshikawa-Hasting Constraints", Mini-Workshop on Unconventional Superconductivity and Correlated Electron Systems, Chinese University of Hong Kong
+- *2024*, "More Information from Lieb-Schultz-Mattis-Oshikawa-Hasting Constraints", Mini-Workshop on Unconventional Superconductivity and Correlated Electron Systems, Chinese University of Hong Kong
+
+- *2024*, "Anomaly of Topological Order from TQFT", Institute for Advanced Study, Tsinghua University
+
+- *2024*, Invited poster at "Quantum Entanglement and Topological Order", Chinese University of Hong Kong
 
 - *2023*, "On the Classification and Construction of Topological Quantum Spin Liquid", Postdoc Retreat, University of Chinese Academy of Sciences
 
 - *2023*, "Anomaly of Topological Order: Symmetry Fractionalization, TQFT and Lattice Realization", Fudan University
+
+- Participant at "Bootstrapping Nature: Non-perturbative Approaches to Critical Phenomena", Galileo Galilei Institute for Theoretical Physics
+
+- Participant at "Quantum Criticality and Topological Phases Transition", Chinese University of Hong Kong
