@@ -1,3 +1,0 @@
-{{ define "main" }}
-<article class="contact-page"><header class="page-header"><p class="eyebrow">{{ if eq .Lang "zh" }}保持联系{{ else }}Get in touch{{ end }}</p><h1>{{ .Title }}</h1></header><div class="prose">{{ .Content }}</div><a class="email-link" href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>{{ partial "social-links.html" . }}</article>
-{{ end }}

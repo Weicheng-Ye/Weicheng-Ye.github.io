@@ -1,4 +1,0 @@
-{{ define "main" }}
-<header class="page-header"><h1>{{ .Title }}</h1>{{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}</header>
-<ol class="post-list">{{ range .RegularPages.ByDate.Reverse }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}</ol>
-{{ end }}
