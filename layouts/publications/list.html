@@ -6,10 +6,10 @@
 {{ $categoryNames := dict "mathematical-physics" "Mathematical Physics" "machine-learning" "Machine Learning" "physics" "Physics" }}
 
 <article class="publications-page">
-    <header class="publications-page__header">
+    <div class="publications-page__header">
         <h1>{{ .Title }}</h1>
         {{ with .Params.intro }}<p class="publications-page__intro">{{ . }}</p>{{ end }}
-    </header>
+    </div>
 
     <div class="publication-filters" role="group" aria-label="Filter publications by field">
         <button class="publication-filter is-active" type="button" data-publication-filter="all" aria-pressed="true">All ({{ len $publications }})</button>
@@ -27,7 +27,7 @@
             <p class="publication-card__authors">{{ .authors | markdownify }}</p>
             <p class="publication-card__citation">{{ .citation }}</p>
             <p class="publication-card__description">{{ .description }}</p>
-            <div class="publication-card__links" aria-label="Publication links">
+            <div class="publication-card__links" role="group" aria-label="Publication links">
                 {{ with .arxiv }}<a class="publication-pill publication-pill--arxiv no-trailing-icon" href="{{ .url }}" aria-label="Read arXiv version">{{ .label }}</a>{{ end }}
                 {{ with .published }}<a class="publication-pill publication-pill--journal no-trailing-icon" href="{{ .url }}" aria-label="Read published version in {{ .label }}">{{ .label }}</a>{{ end }}
                 {{ with .repository }}<a class="publication-pill publication-pill--repository no-trailing-icon" href="{{ .url }}" aria-label="Open repository {{ .label }}">{{ .label }}</a>{{ end }}

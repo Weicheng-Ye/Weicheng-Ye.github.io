@@ -96,6 +96,12 @@ if [[ "$description_count" -ne 14 ]]; then
   exit 1
 fi
 
+link_group_count="$( { grep -oF 'class="publication-card__links" role="group" aria-label="Publication links"' <<< "$publication_body" || true; } | wc -l | tr -d '[:space:]')"
+if [[ "$link_group_count" -ne 14 ]]; then
+  echo "Expected 14 labelled publication link groups; found ${link_group_count}."
+  exit 1
+fi
+
 if grep -Fq 'Result.' <<< "$publication_body"; then
   echo "Did not expect the Result. label on publication cards."
   exit 1
@@ -154,5 +160,11 @@ fi
 
 if ! grep -Fq 'Editors’ Suggestion' "$repo_root/content/publications/_index.md"; then
   echo "Expected the APS designation Editors’ Suggestion."
+  exit 1
+fi
+
+if [[ ! -f "$repo_root/assets/js/publications.js" ]] \
+  || ! rg -q 'card.hidden = category !== "all"' "$repo_root/assets/js/publications.js"; then
+  echo "Expected client-side publication filtering to hide nonmatching cards."
   exit 1
 fi
