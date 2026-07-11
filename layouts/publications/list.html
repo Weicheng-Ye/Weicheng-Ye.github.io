@@ -2,8 +2,9 @@
 {{ $publications := .Params.publications }}
 {{ $mathematicalPhysics := where $publications "category" "mathematical-physics" }}
 {{ $machineLearning := where $publications "category" "machine-learning" }}
-{{ $physics := where $publications "category" "physics" }}
-{{ $categoryNames := dict "mathematical-physics" "Mathematical Physics" "machine-learning" "Machine Learning" "physics" "Physics" }}
+{{ $quantumPhysics := where $publications "category" "quantum-physics" }}
+{{ $theoreticalPhysics := where $publications "category" "theoretical-physics" }}
+{{ $categoryNames := dict "mathematical-physics" "Mathematical Physics" "machine-learning" "Machine Learning" "quantum-physics" "Quantum Physics" "theoretical-physics" "Theoretical Physics" }}
 
 <article class="publications-page">
     <div class="publications-page__header">
@@ -15,7 +16,8 @@
         <button class="publication-filter is-active" type="button" data-publication-filter="all" aria-pressed="true">All ({{ len $publications }})</button>
         <button class="publication-filter" type="button" data-publication-filter="mathematical-physics" aria-pressed="false">Mathematical Physics ({{ len $mathematicalPhysics }})</button>
         <button class="publication-filter" type="button" data-publication-filter="machine-learning" aria-pressed="false">Machine Learning ({{ len $machineLearning }})</button>
-        <button class="publication-filter" type="button" data-publication-filter="physics" aria-pressed="false">Physics ({{ len $physics }})</button>
+        <button class="publication-filter" type="button" data-publication-filter="quantum-physics" aria-pressed="false">Quantum Physics ({{ len $quantumPhysics }})</button>
+        <button class="publication-filter" type="button" data-publication-filter="theoretical-physics" aria-pressed="false">Theoretical Physics ({{ len $theoreticalPhysics }})</button>
     </div>
 
     <div class="publication-list">

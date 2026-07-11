@@ -1,6 +1,6 @@
 ---
 title: "Publications"
-intro: "A selection of research papers across mathematical physics, machine learning, and physics."
+intro: "A selection of research papers across mathematical physics, machine learning, quantum physics, and theoretical physics."
 publications:
   - category: mathematical-physics
     title: "How to Build Anomalous (3+1)d Topological Quantum Field Theories"
@@ -85,7 +85,7 @@ publications:
       label: "arXiv"
       url: "https://arxiv.org/abs/2508.04774"
 
-  - category: physics
+  - category: quantum-physics
     title: "Topological Holography for fermions"
     title_url: "https://arxiv.org/abs/2404.19004"
     authors: "Rui Wen, **Weicheng Ye**, and Andrew C. Potter"
@@ -95,7 +95,7 @@ publications:
       label: "arXiv"
       url: "https://arxiv.org/abs/2404.19004"
 
-  - category: physics
+  - category: quantum-physics
     title: "Classification of symmetry-enriched topological quantum spin liquids"
     title_url: "https://doi.org/10.1103/PhysRevX.14.021053"
     authors: "**Weicheng Ye** and Liujun Zou"
@@ -111,7 +111,7 @@ publications:
       label: "Classification-of-QSL"
       url: "https://github.com/Weicheng-Ye/Classification-of-QSL"
 
-  - category: physics
+  - category: quantum-physics
     title: "Anomaly of (2+1)-Dimensional Symmetry-Enriched Topological Order from (3+1)-Dimensional Topological Quantum Field Theory"
     title_url: "https://doi.org/10.21468/SciPostPhys.15.1.004"
     authors: "**Weicheng Ye** and Liujun Zou"
@@ -124,7 +124,7 @@ publications:
       label: "SciPost Physics"
       url: "https://doi.org/10.21468/SciPostPhys.15.1.004"
 
-  - category: physics
+  - category: quantum-physics
     title: "Probing sign structure using measurement-induced entanglement"
     title_url: "https://doi.org/10.22331/q-2023-02-02-910"
     authors: "Cheng-Ju Lin, **Weicheng Ye**, Yijian Zou, Shengqi Sang, and Timothy H. Hsieh"
@@ -137,7 +137,7 @@ publications:
       label: "Quantum"
       url: "https://doi.org/10.22331/q-2023-02-02-910"
 
-  - category: physics
+  - category: quantum-physics
     title: "Topological characterization of Lieb-Schultz-Mattis constraints and applications to symmetry-enriched quantum criticality"
     title_url: "https://doi.org/10.21468/SciPostPhys.13.3.066"
     authors: "**Weicheng Ye**, Meng Guo, Yin-Chen He, Chong Wang, and Liujun Zou"
@@ -153,7 +153,7 @@ publications:
       label: "Classification-of-Stiefel-Liquid"
       url: "https://github.com/Weicheng-Ye/Classification-of-Stiefel-Liquid"
 
-  - category: physics
+  - category: theoretical-physics
     title: "Ultraviolet-Infrared Mixing in Marginal Fermi Liquids"
     title_url: "https://doi.org/10.1103/PhysRevLett.128.106402"
     authors: "**Weicheng Ye**, Sung-Sik Lee, and Liujun Zou"
@@ -166,7 +166,7 @@ publications:
       label: "Physical Review Letters"
       url: "https://doi.org/10.1103/PhysRevLett.128.106402"
 
-  - category: physics
+  - category: theoretical-physics
     title: "Quasinormal modes of Gauss-Bonnet black holes at large D"
     title_url: "https://doi.org/10.1007/JHEP01(2016)085"
     authors: "Bin Chen, Zhong-Ying Fan, Pengcheng Li, and **Weicheng Ye**"

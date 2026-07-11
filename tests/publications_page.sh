@@ -67,7 +67,7 @@ if ! grep -Fq 'class="publications-page"' <<< "$publication_body"; then
   exit 1
 fi
 
-for filter_label in 'All (14)' 'Mathematical Physics (6)' 'Machine Learning (1)' 'Physics (7)'; do
+for filter_label in 'All (14)' 'Mathematical Physics (6)' 'Machine Learning (1)' 'Quantum Physics (5)' 'Theoretical Physics (2)'; do
   if ! grep -Fq ">$filter_label</button>" <<< "$publication_body"; then
     echo "Expected publication filter ${filter_label}."
     exit 1
@@ -80,12 +80,32 @@ if [[ "$card_count" -ne 14 ]]; then
   exit 1
 fi
 
-for category_and_count in 'mathematical-physics:6' 'machine-learning:1' 'physics:7'; do
+for category_and_count in 'mathematical-physics:6' 'machine-learning:1' 'quantum-physics:5' 'theoretical-physics:2'; do
   category="${category_and_count%%:*}"
   expected_count="${category_and_count##*:}"
   actual_count="$( { grep -oF "data-publication-category=\"${category}\"" <<< "$publication_body" || true; } | wc -l | tr -d '[:space:]')"
   if [[ "$actual_count" -ne "$expected_count" ]]; then
     echo "Expected ${expected_count} ${category} cards; found ${actual_count}."
+    exit 1
+  fi
+done
+
+for paper_and_category in \
+  'Topological Holography for fermions|quantum-physics' \
+  'Classification of symmetry-enriched topological quantum spin liquids|quantum-physics' \
+  'Anomaly of (2+1)-Dimensional Symmetry-Enriched Topological Order from (3+1)-Dimensional Topological Quantum Field Theory|quantum-physics' \
+  'Probing sign structure using measurement-induced entanglement|quantum-physics' \
+  'Topological characterization of Lieb-Schultz-Mattis constraints and applications to symmetry-enriched quantum criticality|quantum-physics' \
+  'Ultraviolet-Infrared Mixing in Marginal Fermi Liquids|theoretical-physics' \
+  'Quasinormal modes of Gauss-Bonnet black holes at large D|theoretical-physics'; do
+  paper_title="${paper_and_category%%|*}"
+  expected_category="${paper_and_category##*|}"
+  actual_category="$(awk -v paper_title="$paper_title" '
+    /^  - category:/ { category = $3 }
+    $0 == "    title: \"" paper_title "\"" { print category; exit }
+  ' "$repo_root/content/publications/_index.md")"
+  if [[ "$actual_category" != "$expected_category" ]]; then
+    echo "Expected ${paper_title} to be in ${expected_category}; found ${actual_category:-none}."
     exit 1
   fi
 done
