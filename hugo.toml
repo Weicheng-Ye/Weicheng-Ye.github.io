@@ -36,7 +36,7 @@ disableKinds = ["taxonomy", "term", "RSS"]
       weight = 2
     [[languages.en.menu.main]]
       name = 'Publications'
-      url = '#publications'
+      url = '/publications'
       weight = 3
     [[languages.en.menu.main]]
       name = 'Educations'
