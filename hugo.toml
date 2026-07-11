@@ -31,25 +31,21 @@ disableKinds = ["taxonomy", "term", "RSS"]
       url = '/#about-me'
       weight = 1
     [[languages.en.menu.main]]
-      name = 'News'
-      url = '#news'
-      weight = 2
-    [[languages.en.menu.main]]
       name = 'Publications'
       url = '/publications'
-      weight = 3
+      weight = 2
     [[languages.en.menu.main]]
       name = 'Educations'
       url = '#educations'
-      weight = 4
+      weight = 3
     [[languages.en.menu.main]]
       name = 'Invited Talks'
-      url = '#invited-talks'
-      weight = 5
+      url = '/invited-talks'
+      weight = 4
     [[languages.en.menu.main]]
       name = 'Blogs'
       url = '/blogs'
-      weight = 6
+      weight = 5
       
   [languages.zh]
     languageName = '中文'

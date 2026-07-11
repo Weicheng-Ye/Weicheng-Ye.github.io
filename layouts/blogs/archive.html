@@ -1,0 +1,27 @@
+{{ define "main" }}
+<article class="content-archive">
+    <div class="content-archive__header">
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.intro }}<p class="content-archive__intro">{{ . }}</p>{{ end }}
+    </div>
+
+    <div class="archive-list">
+        {{ range .RegularPages.ByDate.Reverse }}
+        <article class="archive-card">
+            <p class="archive-card__eyebrow">{{ .Date.Format "January 2, 2006" }}</p>
+            <h2><a href="{{ .RelPermalink }}" class="no-trailing-icon">{{ .Title }}</a></h2>
+            <p class="archive-card__description">{{ .Params.summary | default "A placeholder post summary that you can replace later." }}</p>
+            <div class="archive-card__links">
+                <a class="archive-card__link no-trailing-icon" href="{{ .RelPermalink }}">Read post</a>
+            </div>
+        </article>
+        {{ end }}
+
+        <article class="archive-card archive-card--placeholder">
+            <p class="archive-card__eyebrow">Coming soon</p>
+            <h2>Next post</h2>
+            <p class="archive-card__description">Use this placeholder for your next note, essay, or research update.</p>
+        </article>
+    </div>
+</article>
+{{ end }}

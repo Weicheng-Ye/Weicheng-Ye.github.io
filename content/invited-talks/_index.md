@@ -1,0 +1,21 @@
+---
+title: "Invited Talks"
+intro: "A placeholder archive for invited talks, seminars, and workshops. Replace these entries with your own records."
+layout: "archive"
+talks:
+  - date: "Month YYYY"
+    title: "Talk title"
+    event: "Conference or seminar"
+    location: "City, Country"
+    description: "A short summary of this talk will go here."
+  - date: "Month YYYY"
+    title: "Seminar title"
+    event: "Department seminar"
+    location: "University or institute"
+    description: "Add the topic, audience, and any useful context here."
+  - date: "Month YYYY"
+    title: "Workshop title"
+    event: "Workshop or school"
+    location: "City, Country"
+    description: "Use this space for a concise description of the presentation."
+---

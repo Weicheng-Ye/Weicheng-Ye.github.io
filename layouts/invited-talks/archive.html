@@ -1,0 +1,19 @@
+{{ define "main" }}
+<article class="content-archive">
+    <div class="content-archive__header">
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.intro }}<p class="content-archive__intro">{{ . }}</p>{{ end }}
+    </div>
+
+    <div class="archive-list">
+        {{ range .Params.talks }}
+        <article class="archive-card">
+            <p class="archive-card__eyebrow">{{ .date }}</p>
+            <h2>{{ .title }}</h2>
+            <p class="archive-card__meta">{{ .event }} · {{ .location }}</p>
+            <p class="archive-card__description">{{ .description }}</p>
+        </article>
+        {{ end }}
+    </div>
+</article>
+{{ end }}
