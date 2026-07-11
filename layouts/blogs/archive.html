@@ -8,19 +8,19 @@
     <div class="archive-list">
         {{ range .RegularPages.ByDate.Reverse }}
         <article class="archive-card">
-            <p class="archive-card__eyebrow">{{ .Date.Format "January 2, 2006" }}</p>
+            <p class="archive-card__eyebrow">{{ if eq .Site.Language.Lang "zh" }}{{ .Date.Format "2006年1月2日" }}{{ else }}{{ .Date.Format "January 2, 2006" }}{{ end }}</p>
             <h2><a href="{{ .RelPermalink }}" class="no-trailing-icon">{{ .Title }}</a></h2>
-            <p class="archive-card__description">{{ .Params.summary | default "A placeholder post summary that you can replace later." }}</p>
+            <p class="archive-card__description">{{ if eq .Site.Language.Lang "zh" }}{{ .Params.summary | default "一篇可稍后替换的示例文章摘要。" }}{{ else }}{{ .Params.summary | default "A placeholder post summary that you can replace later." }}{{ end }}</p>
             <div class="archive-card__links">
-                <a class="archive-card__link no-trailing-icon" href="{{ .RelPermalink }}">Read post</a>
+                <a class="archive-card__link no-trailing-icon" href="{{ .RelPermalink }}">{{ if eq .Site.Language.Lang "zh" }}阅读文章{{ else }}Read post{{ end }}</a>
             </div>
         </article>
         {{ end }}
 
         <article class="archive-card archive-card--placeholder">
-            <p class="archive-card__eyebrow">Coming soon</p>
-            <h2>Next post</h2>
-            <p class="archive-card__description">Use this placeholder for your next note, essay, or research update.</p>
+            <p class="archive-card__eyebrow">{{ if eq .Site.Language.Lang "zh" }}敬请期待{{ else }}Coming soon{{ end }}</p>
+            <h2>{{ if eq .Site.Language.Lang "zh" }}下一篇文章{{ else }}Next post{{ end }}</h2>
+            <p class="archive-card__description">{{ if eq .Site.Language.Lang "zh" }}这里将会是你的下一篇随笔、文章或研究动态。{{ else }}Use this placeholder for your next note, essay, or research update.{{ end }}</p>
         </article>
     </div>
 </article>

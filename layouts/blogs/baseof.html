@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+{{ partial "publications-head.html" . }}
+<body class="light-mode archive-layout blog-post-layout">
+    <header class="navbar">
+        {{ partial "navbar.html" . }}
+    </header>
+    <div id="navscreen" class="navscreen hide-in-desktop">
+        {{ partial "navscreen-no-profile.html" . }}
+    </div>
+    <div class="container archive-container">
+        <main class="main-content archive-main-content">
+            {{ block "main" . }}{{ end }}
+        </main>
+    </div>
+    <footer class="footer">
+        {{ partial "footer.html" . }}
+    </footer>
+</body>
+</html>

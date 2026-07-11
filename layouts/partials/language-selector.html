@@ -1,0 +1,21 @@
+{{ $currentLang := .Site.Language.Lang }}
+{{ $pageTranslations := .AllTranslations }}
+
+<div id="i18n-selector">
+    <i class="fas fa-language"></i>
+    <select onchange="window.location.href = this.selectedOptions[0].value">
+        {{ if gt (len $pageTranslations) 1 }}
+            {{ range $pageTranslations }}
+            <option value="{{ .Permalink }}" {{ if eq $currentLang .Lang }}selected{{ end }}>
+                {{ .Language.LanguageName }}
+            </option>
+            {{ end }}
+        {{ else }}
+            {{ range .Site.Home.AllTranslations }}
+            <option value="{{ .Permalink }}" {{ if eq $currentLang .Lang }}selected{{ end }}>
+                {{ .Language.LanguageName }}
+            </option>
+            {{ end }}
+        {{ end }}
+    </select>
+</div>

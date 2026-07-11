@@ -76,7 +76,7 @@ disableKinds = ["taxonomy", "term", "RSS"]
       weight = 5
     [[languages.zh.menu.main]]
       name = '博客'
-      url = '/blogs'
+      url = '/zh/blogs'
       weight = 6
 
 [params]
