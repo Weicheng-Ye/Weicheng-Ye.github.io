@@ -4,7 +4,8 @@
 {{ $quantumPhysics := where $publications "categories" "intersect" (slice "quantum-physics") }}
 {{ $machineLearning := where $publications "categories" "intersect" (slice "machine-learning") }}
 {{ $theoreticalPhysics := where $publications "categories" "intersect" (slice "theoretical-physics") }}
-{{ $categoryNames := dict "mathematical-physics" "Mathematical Physics" "machine-learning" "Machine Learning" "quantum-physics" "Quantum Physics" "theoretical-physics" "Theoretical Physics" }}
+{{ $isChinese := eq .Site.Language.Lang "zh" }}
+{{ $categoryNames := dict "mathematical-physics" (cond $isChinese "数学物理" "Mathematical Physics") "machine-learning" (cond $isChinese "机器学习" "Machine Learning") "quantum-physics" (cond $isChinese "量子物理" "Quantum Physics") "theoretical-physics" (cond $isChinese "理论物理" "Theoretical Physics") }}
 
 <article class="publications-page">
     <div class="publications-page__header">
@@ -12,12 +13,12 @@
         {{ with .Params.intro }}<p class="publications-page__intro">{{ . }}</p>{{ end }}
     </div>
 
-    <div class="publication-filters" role="group" aria-label="Filter publications by field">
-        <button class="publication-filter is-active" type="button" data-publication-filter="all" aria-pressed="true">All ({{ len $publications }})</button>
-        <button class="publication-filter" type="button" data-publication-filter="mathematical-physics" aria-pressed="false">Mathematical Physics ({{ len $mathematicalPhysics }})</button>
-        <button class="publication-filter" type="button" data-publication-filter="quantum-physics" aria-pressed="false">Quantum Physics ({{ len $quantumPhysics }})</button>
-        <button class="publication-filter" type="button" data-publication-filter="machine-learning" aria-pressed="false">Machine Learning ({{ len $machineLearning }})</button>
-        <button class="publication-filter" type="button" data-publication-filter="theoretical-physics" aria-pressed="false">Theoretical Physics ({{ len $theoreticalPhysics }})</button>
+    <div class="publication-filters" role="group" aria-label="{{ if $isChinese }}按研究领域筛选论文{{ else }}Filter publications by field{{ end }}">
+        <button class="publication-filter is-active" type="button" data-publication-filter="all" aria-pressed="true">{{ if $isChinese }}全部{{ else }}All{{ end }} ({{ len $publications }})</button>
+        <button class="publication-filter" type="button" data-publication-filter="mathematical-physics" aria-pressed="false">{{ index $categoryNames "mathematical-physics" }} ({{ len $mathematicalPhysics }})</button>
+        <button class="publication-filter" type="button" data-publication-filter="quantum-physics" aria-pressed="false">{{ index $categoryNames "quantum-physics" }} ({{ len $quantumPhysics }})</button>
+        <button class="publication-filter" type="button" data-publication-filter="machine-learning" aria-pressed="false">{{ index $categoryNames "machine-learning" }} ({{ len $machineLearning }})</button>
+        <button class="publication-filter" type="button" data-publication-filter="theoretical-physics" aria-pressed="false">{{ index $categoryNames "theoretical-physics" }} ({{ len $theoreticalPhysics }})</button>
     </div>
 
     <div class="publication-list">
@@ -29,10 +30,10 @@
             <p class="publication-card__authors">{{ .authors | markdownify }}</p>
             <p class="publication-card__citation">{{ .citation }}</p>
             <p class="publication-card__description">{{ .description }}</p>
-            <div class="publication-card__links" role="group" aria-label="Publication links">
-                {{ with .arxiv }}<a class="publication-pill publication-pill--arxiv no-trailing-icon" href="{{ .url }}" aria-label="Read arXiv version">{{ .label }}</a>{{ end }}
-                {{ with .published }}<a class="publication-pill publication-pill--journal no-trailing-icon" href="{{ .url }}" aria-label="Read published version in {{ .label }}">{{ .label }}</a>{{ end }}
-                {{ with .repository }}<a class="publication-pill publication-pill--repository no-trailing-icon" href="{{ .url }}" aria-label="Open GitHub repository {{ .label }}">GitHub</a>{{ end }}
+            <div class="publication-card__links" role="group" aria-label="{{ if $isChinese }}论文链接{{ else }}Publication links{{ end }}">
+                {{ with .arxiv }}<a class="publication-pill publication-pill--arxiv no-trailing-icon" href="{{ .url }}" aria-label="{{ if $isChinese }}阅读 arXiv 版本{{ else }}Read arXiv version{{ end }}">{{ .label }}</a>{{ end }}
+                {{ with .published }}<a class="publication-pill publication-pill--journal no-trailing-icon" href="{{ .url }}" aria-label="{{ if $isChinese }}阅读发表于 {{ .label }} 的版本{{ else }}Read published version in {{ .label }}{{ end }}">{{ .label }}</a>{{ end }}
+                {{ with .repository }}<a class="publication-pill publication-pill--repository no-trailing-icon" href="{{ .url }}" aria-label="{{ if $isChinese }}打开 GitHub 仓库 {{ .label }}{{ else }}Open GitHub repository {{ .label }}{{ end }}">GitHub</a>{{ end }}
             </div>
         </article>
         {{ end }}

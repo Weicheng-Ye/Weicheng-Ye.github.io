@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{ $isChinese := eq .Site.Language.Lang "zh" }}
 <article class="content-archive">
     <div class="content-archive__header">
         <h1>{{ .Title }}</h1>
@@ -15,7 +16,7 @@
             <p class="archive-card__description">{{ .description }}</p>
             {{ if or .url .youtube }}
             <div class="archive-card__links">
-                {{ with .url }}<a class="archive-card__link no-trailing-icon" href="{{ . }}" target="_blank" rel="noopener noreferrer">Event page</a>{{ end }}
+                {{ with .url }}<a class="archive-card__link no-trailing-icon" href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ if $isChinese }}活动页面{{ else }}Event page{{ end }}</a>{{ end }}
                 {{ with .youtube }}<a class="archive-card__link no-trailing-icon" href="{{ . }}" target="_blank" rel="noopener noreferrer">YouTube</a>{{ end }}
             </div>
             {{ end }}

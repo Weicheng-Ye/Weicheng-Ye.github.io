@@ -35,12 +35,13 @@
         }
     }
 </style>
+{{ $isChinese := eq .Site.Language.Lang "zh" }}
 <div class="footer-content">
     <span class="footer-content__owner">@Weicheng Ye</span>
-    <nav class="footer-content__links" aria-label="Footer links">
-        {{ range where .Site.Params.social "name" "google-scholar" }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">Scholar</a>{{ end }}
+    <nav class="footer-content__links" aria-label="{{ if $isChinese }}页脚链接{{ else }}Footer links{{ end }}">
+        {{ range where .Site.Params.social "name" "google-scholar" }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ if $isChinese }}Google Scholar{{ else }}Scholar{{ end }}</a>{{ end }}
         {{ range where .Site.Params.social "name" "github" }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">GitHub</a>{{ end }}
-        {{ range where .Site.Params.social "name" "email" }}<a href="{{ .url }}">Email</a>{{ end }}
+        {{ range where .Site.Params.social "name" "email" }}<a href="{{ .url }}">{{ if $isChinese }}邮箱{{ else }}Email{{ end }}</a>{{ end }}
         {{ range where .Site.Params.social "name" "linkedin" }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>{{ end }}
     </nav>
 </div>

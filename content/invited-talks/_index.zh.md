@@ -1,0 +1,20 @@
+---
+title: "受邀报告"
+intro: ""
+layout: "archive"
+talks:
+  - date: "2026年4月9日"
+    title: "Anomalies in topological orders: from algebraic topology to physical realisations"
+    event: "Quantum London Seminar Series"
+    location: "London Institute for Mathematical Sciences, London, UK"
+    url: "https://lims.ac.uk/event/anomalies-in-topological-orders-from-algebraic-topology-to-physical-realisations/"
+    youtube: "https://www.youtube.com/watch?v=EcjGRR8FHek"
+    description: "本报告说明，如何将拓扑序中反常的对称性作用表述为代数拓扑中的提升障碍，并阐释这些障碍如何限制物理实现。"
+  - date: "2024年3月4日 · 17:12–17:24"
+    title: "Lieb-Schultz-Mattis constraints in 3D: application to the pyrochlore and the diamond lattices"
+    presenter: "报告人：Chunxiao Liu"
+    event: "2024 APS March Meeting · Session D07: 2D Magnetism and Quantum Spin Liquids"
+    location: "Minneapolis & Virtual · Room L100H"
+    url: "https://meetings.aps.org/Meeting/MAR24/Session/D07.12"
+    description: "本报告将 Lieb-Schultz-Mattis 约束的晶格同伦表述与反常表述联系起来，并推导出适用于焦绿石、金刚石和呼吸焦绿石磁体的完整约束。"
+---

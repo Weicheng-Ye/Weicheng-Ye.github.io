@@ -1,0 +1,43 @@
+{{ $isChinese := eq .Site.Language.Lang "zh" }}
+
+<div class="navbar-start">
+    <a href="{{ .Site.Home.Permalink }}">{{ .Site.Params.author }}</a>
+</div>
+
+<div class="navbar-center hide-in-mobile">
+    <div class="nav-links">
+        {{ range .Site.Menus.main }}
+        <div class="nav-item">
+            {{ if hasPrefix .URL "http" }}
+                <a href="{{ .URL }}" class="nav-link" target="_blank">
+                    {{ .Name }}
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            {{ else }}
+                <a href="{{ .URL }}" class="nav-link">
+                    {{ .Name }}
+                </a>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</div>
+
+<div class="navbar-end">
+
+    {{ partial "language-selector.html" . }}
+
+    <div class="theme-toggle">
+        <button id="theme-toggle-btn" aria-label="{{ if $isChinese }}切换深色模式{{ else }}Toggle dark mode{{ end }}">
+            <i class="fas fa-moon dark-icon"></i>
+            <i class="fas fa-sun light-icon"></i>
+        </button>
+    </div>
+    <button type="button" id="toggle-navbar-button" class="toggle-navbar-button hide-in-desktop" aria-label="{{ if $isChinese }}切换导航菜单{{ else }}Toggle Navbar{{ end }}" aria-expanded="false" aria-controls="navscreen" onclick="toggleNavbar()">
+        <span>
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+        </span>
+    </button>
+</div>
