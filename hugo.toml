@@ -23,7 +23,7 @@ disableKinds = ["taxonomy", "term", "RSS"]
 
     [languages.en.params]
       author = "Weicheng (Victor) Ye"
-      description = "Postdoctoral Fellow at the University of British Columbia"
+      description = "Postdoctoral Fellow at the Chinese University of Hong Kong"
       motto = "Mathematics, Physics, and Computer Science"
     
     [[languages.en.menu.main]]
@@ -35,17 +35,13 @@ disableKinds = ["taxonomy", "term", "RSS"]
       url = '/publications'
       weight = 2
     [[languages.en.menu.main]]
-      name = 'Educations'
-      url = '#educations'
-      weight = 3
-    [[languages.en.menu.main]]
       name = 'Invited Talks'
       url = '/invited-talks'
-      weight = 4
+      weight = 3
     [[languages.en.menu.main]]
       name = 'Blogs'
       url = '/blogs'
-      weight = 5
+      weight = 4
       
   [languages.zh]
     languageName = '中文'

@@ -12,6 +12,12 @@
             <h2>{{ .title }}</h2>
             <p class="archive-card__meta">{{ .event }} · {{ .location }}</p>
             <p class="archive-card__description">{{ .description }}</p>
+            {{ if or .url .youtube }}
+            <div class="archive-card__links">
+                {{ with .url }}<a class="archive-card__link no-trailing-icon" href="{{ . }}" target="_blank" rel="noopener noreferrer">Event page</a>{{ end }}
+                {{ with .youtube }}<a class="archive-card__link no-trailing-icon" href="{{ . }}" target="_blank" rel="noopener noreferrer">YouTube</a>{{ end }}
+            </div>
+            {{ end }}
         </article>
         {{ end }}
     </div>
