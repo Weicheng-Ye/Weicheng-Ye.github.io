@@ -1,6 +1,6 @@
 (() => {
   const filters = Array.from(document.querySelectorAll("[data-publication-filter]"));
-  const cards = Array.from(document.querySelectorAll("[data-publication-category]"));
+  const cards = Array.from(document.querySelectorAll("[data-publication-categories]"));
 
   if (filters.length === 0 || cards.length === 0) {
     return;
@@ -8,7 +8,8 @@
 
   const applyFilter = (category) => {
     cards.forEach((card) => {
-      card.hidden = category !== "all" && card.dataset.publicationCategory !== category;
+      const categories = (card.dataset.publicationCategories || "").split(/\s+/);
+      card.hidden = category !== "all" && !categories.includes(category);
     });
 
     filters.forEach((filter) => {

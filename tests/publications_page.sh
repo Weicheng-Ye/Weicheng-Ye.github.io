@@ -25,7 +25,6 @@ publication_body="${publication_body//&#43;/+}"
 publication_titles=(
   'How to Build Anomalous (3+1)d Topological Quantum Field Theories'
   'Global structure in the presence of a topological defect'
-  'Higher obstructions to conformal boundary conditions and lattice realizations'
   'Crystallography, Group Cohomology, and Lieb-Schultz-Mattis Constraints'
   'Bosonization and Anomaly Indicators of (2+1)-D Fermionic Topological Orders'
   'Complexity and order in approximate quantum error-correcting codes'
@@ -47,6 +46,12 @@ for publication_title in "${publication_titles[@]}"; do
   fi
 done
 
+hidden_publication_title='Higher obstructions to conformal boundary conditions and lattice realizations'
+if grep -Fq "$hidden_publication_title" <<< "$publication_body"; then
+  echo "Did not expect the hidden Higher obstructions paper on the Publications page."
+  exit 1
+fi
+
 if ! grep -Fq '<h1 id="publications">📝 Publications</h1>' "$output_dir/index.html"; then
   echo "Expected the existing homepage publication section to remain unchanged."
   exit 1
@@ -67,58 +72,130 @@ if ! grep -Fq 'class="publications-page"' <<< "$publication_body"; then
   exit 1
 fi
 
-for filter_label in 'All (14)' 'Mathematical Physics (6)' 'Machine Learning (1)' 'Quantum Physics (5)' 'Theoretical Physics (2)'; do
+for filter_label in 'All (13)' 'Mathematical Physics (5)' 'Quantum Physics (4)' 'Machine Learning (1)' 'Theoretical Physics (7)'; do
   if ! grep -Fq ">$filter_label</button>" <<< "$publication_body"; then
     echo "Expected publication filter ${filter_label}."
     exit 1
   fi
 done
 
-card_count="$( { grep -oF 'class="publication-card"' <<< "$publication_body" || true; } | wc -l | tr -d '[:space:]')"
-if [[ "$card_count" -ne 14 ]]; then
-  echo "Expected 14 publication cards; found ${card_count}."
+filter_markup="$(awk '
+  /class="publication-filters"/ { in_filters = 1 }
+  in_filters { print }
+  in_filters && /<\/div>/ { exit }
+' <<< "$publication_body")"
+
+filter_position() {
+  grep -boF ">$1</button>" <<< "$filter_markup" | sed -n '1s/:.*//p'
+}
+
+mathematical_physics_position="$(filter_position 'Mathematical Physics (5)')"
+quantum_physics_position="$(filter_position 'Quantum Physics (4)')"
+machine_learning_position="$(filter_position 'Machine Learning (1)')"
+theoretical_physics_position="$(filter_position 'Theoretical Physics (7)')"
+
+if ! (( mathematical_physics_position < quantum_physics_position && quantum_physics_position < machine_learning_position && machine_learning_position < theoretical_physics_position )); then
+  echo "Expected filters in Mathematical Physics, Quantum Physics, Machine Learning, Theoretical Physics order."
   exit 1
 fi
 
-for category_and_count in 'mathematical-physics:6' 'machine-learning:1' 'quantum-physics:5' 'theoretical-physics:2'; do
+card_count="$( { grep -oF 'class="publication-card"' <<< "$publication_body" || true; } | wc -l | tr -d '[:space:]')"
+if [[ "$card_count" -ne 13 ]]; then
+  echo "Expected 13 publication cards; found ${card_count}."
+  exit 1
+fi
+
+publication_category_attributes="$( { grep -oE 'data-publication-categories="[^"]+"' <<< "$publication_body" || true; } )"
+
+for category_and_count in 'mathematical-physics:5' 'quantum-physics:4' 'machine-learning:1' 'theoretical-physics:7'; do
   category="${category_and_count%%:*}"
   expected_count="${category_and_count##*:}"
-  actual_count="$( { grep -oF "data-publication-category=\"${category}\"" <<< "$publication_body" || true; } | wc -l | tr -d '[:space:]')"
+  actual_count="$(awk -v category="$category" '
+    {
+      categories = $0
+      sub(/^.*="/, "", categories)
+      sub(/"$/, "", categories)
+      category_count = split(categories, values, " ")
+      for (entry = 1; entry <= category_count; entry++) {
+        if (values[entry] == category) {
+          matches++
+        }
+      }
+    }
+    END { print matches + 0 }
+  ' <<< "$publication_category_attributes")"
   if [[ "$actual_count" -ne "$expected_count" ]]; then
     echo "Expected ${expected_count} ${category} cards; found ${actual_count}."
     exit 1
   fi
 done
 
-for paper_and_category in \
-  'Topological Holography for fermions|quantum-physics' \
-  'Classification of symmetry-enriched topological quantum spin liquids|quantum-physics' \
-  'Anomaly of (2+1)-Dimensional Symmetry-Enriched Topological Order from (3+1)-Dimensional Topological Quantum Field Theory|quantum-physics' \
-  'Probing sign structure using measurement-induced entanglement|quantum-physics' \
-  'Topological characterization of Lieb-Schultz-Mattis constraints and applications to symmetry-enriched quantum criticality|quantum-physics' \
+source_categories_for() {
+  awk -v publication_title="$1" '
+    /^  - categories:/ {
+      categories = ""
+      next
+    }
+    /^      - / {
+      categories = categories == "" ? $2 : categories " " $2
+      next
+    }
+    /^    title: / {
+      if ($0 == "    title: \"" publication_title "\"") {
+        print categories
+        exit
+      }
+    }
+  ' "$repo_root/content/publications/_index.md"
+}
+
+for paper_and_categories in \
+  'Complexity and order in approximate quantum error-correcting codes|mathematical-physics quantum-physics' \
+  'Universal quantum phase classification on quantum computers from machine learning|machine-learning quantum-physics' \
+  'Topological Holography for fermions|theoretical-physics' \
+  'Classification of symmetry-enriched topological quantum spin liquids|quantum-physics theoretical-physics' \
+  'Anomaly of (2+1)-Dimensional Symmetry-Enriched Topological Order from (3+1)-Dimensional Topological Quantum Field Theory|theoretical-physics' \
+  'Topological characterization of Lieb-Schultz-Mattis constraints and applications to symmetry-enriched quantum criticality|theoretical-physics' \
   'Ultraviolet-Infrared Mixing in Marginal Fermi Liquids|theoretical-physics' \
-  'Quasinormal modes of Gauss-Bonnet black holes at large D|theoretical-physics'; do
-  paper_title="${paper_and_category%%|*}"
-  expected_category="${paper_and_category##*|}"
-  actual_category="$(awk -v paper_title="$paper_title" '
-    /^  - category:/ { category = $3 }
-    $0 == "    title: \"" paper_title "\"" { print category; exit }
-  ' "$repo_root/content/publications/_index.md")"
-  if [[ "$actual_category" != "$expected_category" ]]; then
-    echo "Expected ${paper_title} to be in ${expected_category}; found ${actual_category:-none}."
+  'Crystallography, Group Cohomology, and Lieb-Schultz-Mattis Constraints|mathematical-physics theoretical-physics'; do
+  paper_title="${paper_and_categories%%|*}"
+  expected_categories="${paper_and_categories##*|}"
+  actual_categories="$(source_categories_for "$paper_title")"
+  if [[ "$actual_categories" != "$expected_categories" ]]; then
+    echo "Expected ${paper_title} to use ${expected_categories}; found ${actual_categories:-none}."
     exit 1
   fi
 done
 
+hidden_in_source="$(awk -v publication_title="$hidden_publication_title" '
+  /^  - categories:/ { hidden = "false"; next }
+  /^    hidden: / { hidden = $2; next }
+  /^    title: / {
+    if ($0 == "    title: \"" publication_title "\"") {
+      print hidden
+      exit
+    }
+  }
+' "$repo_root/content/publications/_index.md")"
+if [[ "$hidden_in_source" != "true" ]]; then
+  echo "Expected the Higher obstructions paper to be retained as hidden source data."
+  exit 1
+fi
+
+if rg -q '^  - category:' "$repo_root/content/publications/_index.md"; then
+  echo "Expected all publication records to use the multi-label categories field."
+  exit 1
+fi
+
 description_count="$( { grep -oF 'class="publication-card__description"' <<< "$publication_body" || true; } | wc -l | tr -d '[:space:]')"
-if [[ "$description_count" -ne 14 ]]; then
-  echo "Expected 14 italic publication descriptions; found ${description_count}."
+if [[ "$description_count" -ne 13 ]]; then
+  echo "Expected 13 italic publication descriptions; found ${description_count}."
   exit 1
 fi
 
 link_group_count="$( { grep -oF 'class="publication-card__links" role="group" aria-label="Publication links"' <<< "$publication_body" || true; } | wc -l | tr -d '[:space:]')"
-if [[ "$link_group_count" -ne 14 ]]; then
-  echo "Expected 14 labelled publication link groups; found ${link_group_count}."
+if [[ "$link_group_count" -ne 13 ]]; then
+  echo "Expected 13 labelled publication link groups; found ${link_group_count}."
   exit 1
 fi
 
@@ -127,14 +204,14 @@ if grep -Fq 'Result.' <<< "$publication_body"; then
   exit 1
 fi
 
-if ! grep -Fq 'Withdrawn' "$publication_page"; then
-  echo "Expected the withdrawn manuscript to be labelled Withdrawn."
+if grep -Fq 'Withdrawn' "$publication_page"; then
+  echo "Did not expect a withdrawn manuscript on the visible Publications page."
   exit 1
 fi
 
 arxiv_link_count="$( { grep -oF 'publication-pill--arxiv' <<< "$publication_body" || true; } | wc -l | tr -d '[:space:]')"
-if [[ "$arxiv_link_count" -ne 14 ]]; then
-  echo "Expected fourteen arXiv link pills; found ${arxiv_link_count}."
+if [[ "$arxiv_link_count" -ne 13 ]]; then
+  echo "Expected thirteen arXiv link pills; found ${arxiv_link_count}."
   exit 1
 fi
 
@@ -151,9 +228,29 @@ for journal_label in 'SciPost Physics' 'Communications in Mathematical Physics' 
   fi
 done
 
+repository_link_count="$( { grep -oE 'class="publication-pill publication-pill--repository[^"]*"[^>]*>GitHub</a>' <<< "$publication_body" || true; } | wc -l | tr -d '[:space:]')"
+if [[ "$repository_link_count" -ne 3 ]]; then
+  echo "Expected three GitHub repository link pills; found ${repository_link_count}."
+  exit 1
+fi
+
 for repository_label in SpaceGroupCohomology Classification-of-QSL Classification-of-Stiefel-Liquid; do
-  if ! grep -Fq ">$repository_label</a>" <<< "$publication_body"; then
-    echo "Expected the repository link label ${repository_label}."
+  if grep -Fq ">$repository_label</a>" <<< "$publication_body"; then
+    echo "Did not expect the repository name ${repository_label} to be displayed."
+    exit 1
+  fi
+  if ! grep -Fq "aria-label=\"Open GitHub repository ${repository_label}\"" <<< "$publication_body"; then
+    echo "Expected the repository accessibility label for ${repository_label}."
+    exit 1
+  fi
+done
+
+for repository_url in \
+  'https://github.com/chxliu/SpaceGroupCohomology' \
+  'https://github.com/Weicheng-Ye/Classification-of-QSL' \
+  'https://github.com/Weicheng-Ye/Classification-of-Stiefel-Liquid'; do
+  if ! grep -Fq "href=\"${repository_url}\"" <<< "$publication_body"; then
+    echo "Expected the GitHub repository URL ${repository_url}."
     exit 1
   fi
 done
@@ -184,8 +281,9 @@ if ! grep -Fq 'Editors’ Suggestion' "$repo_root/content/publications/_index.md
 fi
 
 if [[ ! -f "$repo_root/assets/js/publications.js" ]] \
-  || ! rg -q 'card.hidden = category !== "all"' "$repo_root/assets/js/publications.js"; then
-  echo "Expected client-side publication filtering to hide nonmatching cards."
+  || ! rg -Fq 'data-publication-categories' "$repo_root/assets/js/publications.js" \
+  || ! rg -Fq '!categories.includes(category)' "$repo_root/assets/js/publications.js"; then
+  echo "Expected client-side publication filtering to match multi-label cards."
   exit 1
 fi
 

@@ -1,9 +1,9 @@
 {{ define "main" }}
-{{ $publications := .Params.publications }}
-{{ $mathematicalPhysics := where $publications "category" "mathematical-physics" }}
-{{ $machineLearning := where $publications "category" "machine-learning" }}
-{{ $quantumPhysics := where $publications "category" "quantum-physics" }}
-{{ $theoreticalPhysics := where $publications "category" "theoretical-physics" }}
+{{ $publications := where .Params.publications "hidden" "ne" true }}
+{{ $mathematicalPhysics := where $publications "categories" "intersect" (slice "mathematical-physics") }}
+{{ $quantumPhysics := where $publications "categories" "intersect" (slice "quantum-physics") }}
+{{ $machineLearning := where $publications "categories" "intersect" (slice "machine-learning") }}
+{{ $theoreticalPhysics := where $publications "categories" "intersect" (slice "theoretical-physics") }}
 {{ $categoryNames := dict "mathematical-physics" "Mathematical Physics" "machine-learning" "Machine Learning" "quantum-physics" "Quantum Physics" "theoretical-physics" "Theoretical Physics" }}
 
 <article class="publications-page">
@@ -15,15 +15,15 @@
     <div class="publication-filters" role="group" aria-label="Filter publications by field">
         <button class="publication-filter is-active" type="button" data-publication-filter="all" aria-pressed="true">All ({{ len $publications }})</button>
         <button class="publication-filter" type="button" data-publication-filter="mathematical-physics" aria-pressed="false">Mathematical Physics ({{ len $mathematicalPhysics }})</button>
-        <button class="publication-filter" type="button" data-publication-filter="machine-learning" aria-pressed="false">Machine Learning ({{ len $machineLearning }})</button>
         <button class="publication-filter" type="button" data-publication-filter="quantum-physics" aria-pressed="false">Quantum Physics ({{ len $quantumPhysics }})</button>
+        <button class="publication-filter" type="button" data-publication-filter="machine-learning" aria-pressed="false">Machine Learning ({{ len $machineLearning }})</button>
         <button class="publication-filter" type="button" data-publication-filter="theoretical-physics" aria-pressed="false">Theoretical Physics ({{ len $theoreticalPhysics }})</button>
     </div>
 
     <div class="publication-list">
         {{ range $publications }}
-        <article class="publication-card" data-publication-category="{{ .category }}">
-            <div class="publication-card__eyebrow">{{ index $categoryNames .category }}</div>
+        <article class="publication-card" data-publication-categories="{{ delimit .categories " " }}">
+            <div class="publication-card__eyebrow">{{ range $index, $category := .categories }}{{ if $index }} · {{ end }}{{ index $categoryNames $category }}{{ end }}</div>
             <h2 class="publication-card__title"><a href="{{ .title_url }}" class="no-trailing-icon">{{ .title }}</a></h2>
             {{ with .status }}<p class="publication-card__status">{{ . }}</p>{{ end }}
             <p class="publication-card__authors">{{ .authors | markdownify }}</p>
@@ -32,7 +32,7 @@
             <div class="publication-card__links" role="group" aria-label="Publication links">
                 {{ with .arxiv }}<a class="publication-pill publication-pill--arxiv no-trailing-icon" href="{{ .url }}" aria-label="Read arXiv version">{{ .label }}</a>{{ end }}
                 {{ with .published }}<a class="publication-pill publication-pill--journal no-trailing-icon" href="{{ .url }}" aria-label="Read published version in {{ .label }}">{{ .label }}</a>{{ end }}
-                {{ with .repository }}<a class="publication-pill publication-pill--repository no-trailing-icon" href="{{ .url }}" aria-label="Open repository {{ .label }}">{{ .label }}</a>{{ end }}
+                {{ with .repository }}<a class="publication-pill publication-pill--repository no-trailing-icon" href="{{ .url }}" aria-label="Open GitHub repository {{ .label }}">GitHub</a>{{ end }}
             </div>
         </article>
         {{ end }}
