@@ -6,7 +6,11 @@
         {{ partial "navbar.html" . }}
     </header>
     <div id="navscreen" class="navscreen hide-in-desktop">
+        {{ if eq .Section "blogs" }}
+        {{ partial "navscreen-no-profile.html" . }}
+        {{ else }}
         {{ partial "navscreen.html" . }}
+        {{ end }}
     </div>
     <div class="container archive-container">
         <main class="main-content archive-main-content">

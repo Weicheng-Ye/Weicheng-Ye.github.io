@@ -1,0 +1,9 @@
+<div class="nav-screen-container">
+    <div class="nav-screen-links">
+        {{ range .Site.Menus.main }}
+        <div class="nav-links-item">
+            <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
+        </div>
+        {{ end }}
+    </div>
+</div>

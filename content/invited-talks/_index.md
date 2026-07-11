@@ -10,4 +10,11 @@ talks:
     url: "https://lims.ac.uk/event/anomalies-in-topological-orders-from-algebraic-topology-to-physical-realisations/"
     youtube: "https://www.youtube.com/watch?v=EcjGRR8FHek"
     description: "This talk explains how anomalous symmetry actions in topological orders can be formalised as lifting obstructions in algebraic topology, and how those obstructions constrain physical realisations."
+  - date: "4 March 2024 · 5:12–5:24 PM"
+    title: "Lieb-Schultz-Mattis constraints in 3D: application to the pyrochlore and the diamond lattices"
+    presenter: "Presenter: Chunxiao Liu"
+    event: "2024 APS March Meeting · Session D07: 2D Magnetism and Quantum Spin Liquids"
+    location: "Minneapolis & Virtual · Room L100H"
+    url: "https://meetings.aps.org/Meeting/MAR24/Session/D07.12"
+    description: "This presentation relates lattice-homotopy and anomaly formulations of Lieb-Schultz-Mattis constraints, deriving complete constraints for pyrochlore, diamond, and breathing-pyrochlore magnets."
 ---
