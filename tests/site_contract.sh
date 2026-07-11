@@ -8,7 +8,7 @@ trap 'rm -rf -- "$output"' EXIT
 
 fail() { printf 'FAIL: %s\n' "$1" >&2; exit 1; }
 assert_file() { [[ -f "$1" ]] || fail "missing file $1"; }
-assert_contains() { rg -q --fixed-strings "$2" "$1" || fail "$1 does not contain $2"; }
+assert_contains() { rg -q --fixed-strings -- "$2" "$1" || fail "$1 does not contain $2"; }
 assert_not_contains() { ! rg -q "$2" "$1" || fail "$1 unexpectedly contains $2"; }
 
 build_site() {
