@@ -1,0 +1,80 @@
+- year: 2025
+  papers:
+    - title: "How to Build Anomalous (3+1)d Topological Quantum Field Theories"
+      url: "https://arxiv.org/abs/2510.24834"
+      authors: [{name: "Arun Debray"}, {name: "Weicheng Ye", me: true}, {name: "Matthew Yu"}]
+      venue: "arXiv preprint (2025)."
+      links: [{label: "arXiv", url: "https://arxiv.org/abs/2510.24834"}]
+    - title: "Universal quantum phase classification on quantum computers from machine learning"
+      url: "https://arxiv.org/abs/2508.04774"
+      authors: [{name: "Weicheng Ye", me: true}, {name: "Shuwei Liu"}, {name: "Shiyu Zhou"}, {name: "Yijian Zou"}]
+      venue: "arXiv preprint (2025)."
+      links: [{label: "arXiv", url: "https://arxiv.org/abs/2508.04774"}]
+    - title: "Global structure in the presence of a topological defect"
+      url: "https://arxiv.org/abs/2501.18399"
+      authors: [{name: "Arun Debray"}, {name: "Weicheng Ye", me: true}, {name: "Matthew Yu"}]
+      venue: "arXiv preprint (2025)."
+      links: [{label: "arXiv", url: "https://arxiv.org/abs/2501.18399"}]
+    - title: "Crystallography, Group Cohomology, and Lieb-Schultz-Mattis Constraints"
+      url: "https://doi.org/10.21468/SciPostPhys.18.5.161"
+      authors: [{name: "Chunxiao Liu"}, {name: "Weicheng Ye", me: true}]
+      venue: "SciPost Physics 18.1 (2025): 005."
+      links: [{label: "arXiv", url: "https://arxiv.org/abs/2410.03607"}, {label: "GitHub", url: "https://github.com/chxliu/Space-Group-Cohomology-and-LSM"}]
+    - title: "Bosonization and Anomaly Indicators of (2+1)-D Fermionic Topological Orders"
+      url: "https://arxiv.org/abs/2312.13341"
+      authors: [{name: "Arun Debray"}, {name: "Weicheng Ye", me: true}, {name: "Matthew Yu"}]
+      venue: "Communications in Mathematical Physics 406, 178 (2025)."
+      links: [{label: "arXiv", url: "https://arxiv.org/abs/2312.13341"}]
+- year: 2024
+  papers:
+    - title: "Higher obstructions to conformal boundary conditions and lattice realizations"
+      url: "https://arxiv.org/abs/2411.11757"
+      authors: [{name: "Ruizhi Liu"}, {name: "Weicheng Ye", me: true}]
+      venue: "arXiv preprint (2024)."
+      links: [{label: "arXiv", url: "https://arxiv.org/abs/2411.11757"}]
+    - title: "Topological Holography for fermions"
+      url: "https://arxiv.org/abs/2404.19004"
+      authors: [{name: "Rui Wen"}, {name: "Weicheng Ye", me: true}, {name: "Andrew C. Potter"}]
+      venue: "arXiv preprint (2024)."
+      links: [{label: "arXiv", url: "https://arxiv.org/abs/2404.19004"}]
+    - title: "Complexity and order in approximate quantum error-correcting codes"
+      url: "https://doi.org/10.1038/s41567-024-02621-x"
+      authors: [{name: "Jinmin Yi"}, {name: "Weicheng Ye", me: true}, {name: "Daniel Gottesman"}, {name: "Zi-Wen Liu"}]
+      venue: "Nature Physics 20.11 (2024): 1798-1803."
+      links: [{label: "arXiv", url: "https://arxiv.org/abs/2310.04710"}]
+    - title: "Classification of symmetry-enriched topological quantum spin liquids"
+      url: "https://doi.org/10.1103/PhysRevX.14.021053"
+      authors: [{name: "Weicheng Ye", me: true}, {name: "Liujun Zou"}]
+      venue: "Physical Review X 14.2 (2024): 021053."
+      links: [{label: "arXiv", url: "https://arxiv.org/abs/2309.15118"}, {label: "GitHub", url: "https://github.com/Weicheng-Ye/Classification-of-QSL"}]
+- year: 2023
+  papers:
+    - title: "Anomaly of (2+1)-Dimensional Symmetry-Enriched Topological Order from (3+1)-Dimensional Topological Quantum Field Theory"
+      url: "https://doi.org/10.21468/SciPostPhys.15.1.004"
+      authors: [{name: "Weicheng Ye", me: true}, {name: "Liujun Zou"}]
+      venue: "SciPost Physics 15.1 (2023): 004."
+      links: [{label: "arXiv", url: "https://arxiv.org/abs/2210.02444"}]
+    - title: "Probing sign structure using measurement-induced entanglement"
+      url: "https://doi.org/10.22331/q-2023-02-02-910"
+      authors: [{name: "Cheng-Ju Lin"}, {name: "Weicheng Ye", me: true}, {name: "Yijian Zou"}, {name: "Shengqi Sang"}, {name: "Timothy H. Hsieh"}]
+      venue: "Quantum 7 (2023): 910."
+      links: [{label: "arXiv", url: "https://arxiv.org/abs/2205.05692"}]
+- year: 2022
+  papers:
+    - title: "Topological characterization of Lieb-Schultz-Mattis constraints and applications to symmetry-enriched quantum criticality"
+      url: "https://doi.org/10.21468/SciPostPhys.13.3.066"
+      authors: [{name: "Weicheng Ye", me: true}, {name: "Meng Guo"}, {name: "Yin-Chen He"}, {name: "Chong Wang"}, {name: "Liujun Zou"}]
+      venue: "SciPost Physics 13.3 (2022): 066."
+      links: [{label: "arXiv", url: "https://arxiv.org/abs/2111.12097"}, {label: "GitHub", url: "https://github.com/Weicheng-Ye/Classification-of-Stiefel-Liquid"}]
+    - title: "Ultraviolet-Infrared Mixing in Marginal Fermi Liquids"
+      url: "https://doi.org/10.1103/PhysRevLett.128.106402"
+      authors: [{name: "Weicheng Ye", me: true}, {name: "Sung-Sik Lee"}, {name: "Liujun Zou"}]
+      venue: "Physical Review Letters 128.10 (2022): 106402. [Editor's Suggestion]"
+      links: [{label: "arXiv", url: "https://arxiv.org/abs/2109.00004"}]
+- year: 2016
+  papers:
+    - title: "Quasinormal modes of Gauss-Bonnet black holes at large D"
+      url: "https://doi.org/10.1007/JHEP01(2016)085"
+      authors: [{name: "Bin Chen"}, {name: "Zhong-Ying Fan"}, {name: "Pengcheng Li"}, {name: "Weicheng Ye", me: true}]
+      venue: "Journal of High Energy Physics 2016.1 (2016): 1-27."
+      links: [{label: "arXiv", url: "https://arxiv.org/abs/1511.08706"}]

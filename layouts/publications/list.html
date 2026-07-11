@@ -1,0 +1,24 @@
+{{ define "main" }}
+<article class="publications-page">
+  <header class="page-header"><p class="eyebrow">{{ if eq .Lang "zh" }}研究成果{{ else }}Research archive{{ end }}</p><h1>{{ .Title }}</h1>{{ with .Description }}<p>{{ . }}</p>{{ end }}</header>
+  <div class="publication-groups">
+    {{ range hugo.Data.publications }}
+      <section class="publication-year" aria-labelledby="year-{{ .year }}">
+        <h2 id="year-{{ .year }}">{{ .year }}</h2>
+        <ol>
+          {{ range .papers }}
+            <li class="publication-entry">
+              <article>
+                <h3><a href="{{ .url }}">{{ range $index, $part := strings.Split .title "+" }}{{ if $index }}+{{ end }}{{ $part }}{{ end }}</a></h3>
+                <p class="publication-authors">{{ range $index, $author := .authors }}{{ if $index }}, {{ end }}{{ if $author.me }}<strong>{{ $author.name }}</strong>{{ else }}{{ $author.name }}{{ end }}{{ end }}</p>
+                <p class="publication-venue">{{ .venue }}</p>
+                <ul class="publication-links">{{ range .links }}<li><a href="{{ .url }}">{{ .label }}</a></li>{{ end }}</ul>
+              </article>
+            </li>
+          {{ end }}
+        </ol>
+      </section>
+    {{ end }}
+  </div>
+</article>
+{{ end }}
