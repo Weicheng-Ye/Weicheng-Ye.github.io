@@ -10,6 +10,7 @@ fail() { printf 'FAIL: %s\n' "$1" >&2; exit 1; }
 assert_file() { [[ -f "$1" ]] || fail "missing file $1"; }
 assert_contains() { rg -q --fixed-strings -- "$2" "$1" || fail "$1 does not contain $2"; }
 assert_not_contains() { ! rg -q "$2" "$1" || fail "$1 unexpectedly contains $2"; }
+assert_not_contains_fixed() { ! rg -q --fixed-strings -- "$2" "$1" || fail "$1 unexpectedly contains $2"; }
 
 build_site() {
   hugo --source "$repo_root" --destination "$output" --environment production --cleanDestinationDir --panicOnWarning
@@ -41,6 +42,8 @@ check_publications() {
   assert_contains "$output/publications/index.html" 'How to Build Anomalous (3+1)d Topological Quantum Field Theories'
   assert_contains "$output/publications/index.html" 'Quasinormal modes of Gauss-Bonnet black holes at large D'
   assert_contains "$output/publications/index.html" 'https://github.com/Weicheng-Ye/Classification-of-QSL'
+  assert_contains "$output/publications/index.html" 'SciPost Physics 18.5 (2025): 161.'
+  assert_not_contains_fixed "$output/publications/index.html" 'SciPost Physics 18.1 (2025): 005.'
 }
 
 check_presentation() {

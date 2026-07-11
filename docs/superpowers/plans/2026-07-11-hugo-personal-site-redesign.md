@@ -535,7 +535,7 @@ Create `data/publications.yaml` with groups in this exact order and preserve the
     - title: "Crystallography, Group Cohomology, and Lieb-Schultz-Mattis Constraints"
       url: "https://doi.org/10.21468/SciPostPhys.18.5.161"
       authors: [{name: "Chunxiao Liu"}, {name: "Weicheng Ye", me: true}]
-      venue: "SciPost Physics 18.1 (2025): 005."
+      venue: "SciPost Physics 18.5 (2025): 161."
       links: [{label: "arXiv", url: "https://arxiv.org/abs/2410.03607"}, {label: "GitHub", url: "https://github.com/chxliu/Space-Group-Cohomology-and-LSM"}]
     - title: "Bosonization and Anomaly Indicators of (2+1)-D Fermionic Topological Orders"
       url: "https://arxiv.org/abs/2312.13341"
