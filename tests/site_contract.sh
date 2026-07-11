@@ -56,6 +56,10 @@ check_presentation() {
   assert_contains "$css_file" ':focus-visible'
   assert_contains "$css_file" 'prefers-reduced-motion'
   assert_contains "$css_file" '@media(max-width:800px)'
+  assert_contains "$css_file" 'a:focus-visible,summary:focus-visible{outline:3px solid var(--color-accent);outline-offset:4px;border-radius:2px}'
+  assert_contains "$css_file" 'border-bottom:1px solid var(--color-rule);background:var(--color-surface);background:color-mix(in srgb,var(--color-surface) 94%,transparent);backdrop-filter:blur(12px)'
+  assert_contains "$css_file" '.site-main{width:100%;padding:var(--space-5)1.2rem;scroll-margin-top:4.5rem}'
+  assert_contains "$css_file" 'h1{font-size:clamp(2.1rem,8vw,3.3rem)}.publication-year>h2{position:static}}@media(max-width:540px){.site-main{padding-top:var(--space-4)}'
 }
 
 check_repository() {

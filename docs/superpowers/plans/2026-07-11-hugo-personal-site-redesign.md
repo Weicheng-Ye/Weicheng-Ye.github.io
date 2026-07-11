@@ -133,6 +133,10 @@ check_presentation() {
   assert_contains "$css_file" ':focus-visible'
   assert_contains "$css_file" 'prefers-reduced-motion'
   assert_contains "$css_file" '@media(max-width:800px)'
+  assert_contains "$css_file" 'a:focus-visible,summary:focus-visible{outline:3px solid var(--color-accent);outline-offset:4px;border-radius:2px}'
+  assert_contains "$css_file" 'border-bottom:1px solid var(--color-rule);background:var(--color-surface);background:color-mix(in srgb,var(--color-surface) 94%,transparent);backdrop-filter:blur(12px)'
+  assert_contains "$css_file" '.site-main{width:100%;padding:var(--space-5)1.2rem;scroll-margin-top:4.5rem}'
+  assert_contains "$css_file" 'h1{font-size:clamp(2.1rem,8vw,3.3rem)}.publication-year>h2{position:static}}@media(max-width:540px){.site-main{padding-top:var(--space-4)}'
 }
 
 check_repository() {
@@ -702,7 +706,7 @@ body { margin: 0; background: var(--color-bg); color: var(--color-text); font-fa
 img { display: block; max-width: 100%; }
 a { color: var(--color-accent); text-decoration-thickness: .08em; text-underline-offset: .18em; }
 a:hover { color: var(--color-accent-dark); }
-a:focus-visible, summary:focus-visible { outline: 3px solid color-mix(in srgb, var(--color-accent) 45%, transparent); outline-offset: 4px; border-radius: 2px; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 4px; border-radius: 2px; }
 .skip-link { position: fixed; top: .75rem; left: .75rem; z-index: 100; transform: translateY(-200%); padding: .6rem .85rem; background: var(--color-text); color: white; }
 .skip-link:focus { transform: translateY(0); }
 .site-shell { min-height: 100vh; display: grid; grid-template-columns: var(--sidebar-width) minmax(0, 1fr); grid-template-rows: 1fr auto; }
@@ -758,16 +762,17 @@ h1 { margin: 0; font-size: clamp(2.35rem, 5vw, 4rem); letter-spacing: -.035em; }
 @media (max-width: 800px) {
   .site-shell { display: block; }
   .site-sidebar { display: none; }
-  .mobile-header { display: flex; position: sticky; top: 0; z-index: 20; align-items: center; justify-content: space-between; min-height: 4rem; padding: .8rem 1.1rem; border-bottom: 1px solid var(--color-rule); background: color-mix(in srgb, var(--color-surface) 94%, transparent); backdrop-filter: blur(12px); }
+  .mobile-header { display: flex; position: sticky; top: 0; z-index: 20; align-items: center; justify-content: space-between; min-height: 4rem; padding: .8rem 1.1rem; border-bottom: 1px solid var(--color-rule); background: var(--color-surface); background: color-mix(in srgb, var(--color-surface) 94%, transparent); backdrop-filter: blur(12px); }
   .mobile-menu { position: relative; }
   .mobile-menu summary { cursor: pointer; color: var(--color-text); font-size: .85rem; font-weight: 700; list-style: none; }
   .mobile-menu summary::-webkit-details-marker { display: none; }
   .mobile-menu nav { position: absolute; top: 2.45rem; right: 0; min-width: 12rem; display: grid; padding: .65rem; border: 1px solid var(--color-rule); border-radius: 5px; background: var(--color-surface); box-shadow: 0 18px 45px rgba(23, 33, 43, .12); }
   .mobile-menu nav a { padding: .65rem .75rem; color: var(--color-text); text-decoration: none; }
-  .site-main { width: 100%; padding: var(--space-5) 1.2rem; }
+  .site-main { width: 100%; padding: var(--space-5) 1.2rem; scroll-margin-top: 4.5rem; }
   .site-footer { padding: var(--space-3) 1.2rem var(--space-4); }
   .profile-header { grid-template-columns: minmax(8.5rem, 11rem) minmax(0, 1fr); gap: var(--space-4); }
   h1 { font-size: clamp(2.1rem, 8vw, 3.3rem); }
+  .publication-year > h2 { position: static; }
 }
 
 @media (max-width: 540px) {
@@ -776,7 +781,7 @@ h1 { margin: 0; font-size: clamp(2.35rem, 5vw, 4rem); letter-spacing: -.035em; }
   .portrait-wrap { width: min(11.5rem, 54vw); }
   .profile-bio { margin-top: var(--space-4); }
   .publication-year { grid-template-columns: 1fr; gap: var(--space-3); }
-  .publication-year > h2 { position: static; padding-bottom: .4rem; border-bottom: 1px solid var(--color-rule); }
+  .publication-year > h2 { padding-bottom: .4rem; border-bottom: 1px solid var(--color-rule); }
 }
 
 @media (prefers-reduced-motion: reduce) {
