@@ -22,6 +22,19 @@ publication_page="$output_dir/publications/index.html"
 publication_body="$(sed '1,/<\/head>/d' "$publication_page")"
 publication_body="${publication_body//&#43;/+}"
 
+blogs_page="$output_dir/blogs/index.html"
+if [[ ! -f "$blogs_page" ]]; then
+  echo "Expected a Blogs page."
+  exit 1
+fi
+
+for section_page in "$publication_page" "$blogs_page"; do
+  if ! grep -Fq 'href="/#about-me" class="nav-link">About Me</a>' "$section_page"; then
+    echo "Expected About Me navigation to return to the homepage anchor."
+    exit 1
+  fi
+done
+
 publication_titles=(
   'How to Build Anomalous (3+1)d Topological Quantum Field Theories'
   'Global structure in the presence of a topological defect'
@@ -69,6 +82,39 @@ fi
 
 if ! grep -Fq 'class="publications-page"' <<< "$publication_body"; then
   echo "Expected the publications archive page marker."
+  exit 1
+fi
+
+expected_intro='A selection of research papers across mathematical physics, quantum physics, machine learning, and theoretical physics.'
+if ! grep -Fq "<p class=\"publications-page__intro\">${expected_intro}</p>" "$publication_page"; then
+  echo "Expected the Publications introduction to be rendered as one sentence."
+  exit 1
+fi
+
+intro_style="$(sed -n '/^\.publications-page__intro {/,/^}/p' "$repo_root/assets/css/publications.css")"
+if ! grep -Fq 'max-width: none;' <<< "$intro_style"; then
+  echo "Expected the Publications introduction to use the full content width."
+  exit 1
+fi
+
+if ! rg -Fq '@media screen and (min-width: 1100px)' "$repo_root/assets/css/publications.css" \
+  || ! rg -Fq 'white-space: nowrap;' "$repo_root/assets/css/publications.css"; then
+  echo "Expected the Publications introduction to remain on one line at desktop widths."
+  exit 1
+fi
+
+journal_style="$(sed -n '/^\.publication-pill--journal {/,/^}/p' "$repo_root/assets/css/publications.css")"
+if ! grep -Fq 'background: rgba(181, 71, 62, 0.14);' <<< "$journal_style" \
+  || ! grep -Fq 'border-color: rgba(181, 71, 62, 0.35);' <<< "$journal_style" \
+  || ! grep -Fq 'color: #b5473e;' <<< "$journal_style"; then
+  echo "Expected journal pills to use the red publication color."
+  exit 1
+fi
+
+journal_hover_style="$(sed -n '/^\.publication-pill--journal:hover {/,/^}/p' "$repo_root/assets/css/publications.css")"
+if ! grep -Fq 'background: #b5473e;' <<< "$journal_hover_style" \
+  || ! grep -Fq 'color: #fff;' <<< "$journal_hover_style"; then
+  echo "Expected journal-pill hover styling to remain red."
   exit 1
 fi
 

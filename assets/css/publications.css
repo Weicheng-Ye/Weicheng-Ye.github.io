@@ -28,7 +28,7 @@
     font-size: clamp(1rem, 1.4vw, 1.2rem);
     line-height: 1.6;
     margin: 1.25rem 0 0;
-    max-width: 52rem;
+    max-width: none;
 }
 
 .publication-filters {
@@ -182,7 +182,27 @@
 }
 
 .publication-pill--journal {
-    background: rgba(41, 128, 185, 0.16);
+    background: rgba(181, 71, 62, 0.14);
+    border-color: rgba(181, 71, 62, 0.35);
+    color: #b5473e;
+}
+
+.publication-pill--journal:hover {
+    background: #b5473e;
+    border-color: #b5473e;
+    color: #fff;
+}
+
+.dark-mode .publication-pill--journal {
+    background: rgba(255, 155, 145, 0.16);
+    border-color: rgba(255, 155, 145, 0.45);
+    color: #ff9b91;
+}
+
+.dark-mode .publication-pill--journal:hover {
+    background: #ff9b91;
+    border-color: #ff9b91;
+    color: #1a1a1a;
 }
 
 .publication-pill--repository {
@@ -192,6 +212,12 @@
 
 .dark-mode .publication-pill--repository {
     color: var(--text-color);
+}
+
+@media screen and (min-width: 1100px) {
+    .publications-page__intro {
+        white-space: nowrap;
+    }
 }
 
 @media screen and (max-width: 845px) {
