@@ -1,0 +1,31 @@
+# Hugo output
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# Local planning and assistant state
+.claude/
+.agent/
+.agents/
+.codex/
+.worktrees/
+.superpowers/
+CLAUDE.md
+AGENTS.md
+notes.md
+task_plan.md
+
+# Operating systems and editors
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
