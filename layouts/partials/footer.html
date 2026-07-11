@@ -1,0 +1,7 @@
+<div class="footer-content">
+    © Weicheng Ye<br>
+    {{ range where .Site.Params.social "name" "google-scholar" }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">Scholar</a>{{ end }}
+    {{ range where .Site.Params.social "name" "github" }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">GitHub</a>{{ end }}
+    {{ range where .Site.Params.social "name" "email" }}<a href="{{ .url }}">Email</a>{{ end }}
+    {{ range where .Site.Params.social "name" "linkedin" }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>{{ end }}
+</div>
