@@ -220,8 +220,10 @@ Copy the module head partial exactly, then add these two assets before `</head>`
 ```go-html-template
 {{ $publicationStyles := resources.Get "css/publications.css" | minify }}
 <link rel="stylesheet" href="{{ $publicationStyles.RelPermalink }}">
-{{ $publicationScript := resources.Get "js/publications.js" | minify }}
-<script src="{{ $publicationScript.RelPermalink }}" defer></script>
+{{ with resources.Get "js/publications.js" }}
+  {{ $publicationScript := . | minify }}
+  <script src="{{ $publicationScript.RelPermalink }}" defer></script>
+{{ end }}
 ```
 
 This preserves current SEO tags, Font Awesome, Lato, theme CSS, and theme JavaScript while loading the new assets only for Publications.

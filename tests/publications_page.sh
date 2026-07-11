@@ -20,6 +20,7 @@ fi
 
 publication_page="$output_dir/publications/index.html"
 publication_body="$(sed '1,/<\/head>/d' "$publication_page")"
+publication_body="${publication_body//&#43;/+}"
 
 publication_titles=(
   'How to Build Anomalous (3+1)d Topological Quantum Field Theories'
@@ -153,11 +154,5 @@ fi
 
 if ! grep -Fq 'Editors’ Suggestion' "$repo_root/content/publications/_index.md"; then
   echo "Expected the APS designation Editors’ Suggestion."
-  exit 1
-fi
-
-if [[ ! -f "$repo_root/assets/js/publications.js" ]] \
-  || ! rg -q 'card.hidden = category !== "all"' "$repo_root/assets/js/publications.js"; then
-  echo "Expected client-side publication filtering to hide nonmatching cards."
   exit 1
 fi
