@@ -1,12 +1,12 @@
 .publications-layout .publications-container {
     display: block;
-    max-width: 1440px;
-    padding: calc(var(--navbar-height) + 1.5rem) clamp(1.25rem, 4vw, 4.5rem) 3.5rem;
+    max-width: 1200px;
+    padding: var(--navbar-height) 20px 3.5rem;
 }
 
 .publications-layout .publications-main-content {
     max-width: none;
-    padding: 0;
+    padding: 15px;
 }
 
 .publications-page {
@@ -15,11 +15,11 @@
 
 .publications-page h1 {
     border: 0;
-    font-size: clamp(2.5rem, 5vw, 4.25rem);
-    font-weight: 800;
-    letter-spacing: -0.045em;
-    line-height: 1;
-    margin: 0;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: normal;
+    line-height: 1.6;
+    margin: 20px 0;
     padding: 0;
 }
 
@@ -196,7 +196,7 @@
 
 @media screen and (max-width: 845px) {
     .publications-layout .publications-container {
-        padding: calc(var(--navbar-height) + 1rem) 1rem 2.25rem;
+        padding: var(--navbar-height) 20px 2.25rem;
     }
 
     .publication-filter {
@@ -209,10 +209,6 @@
 }
 
 @media screen and (max-width: 480px) {
-    .publications-page h1 {
-        font-size: 2.5rem;
-    }
-
     .publication-filter {
         font-size: 0.88rem;
         padding-inline: 0.8rem;

@@ -168,3 +168,18 @@ if [[ ! -f "$repo_root/assets/js/publications.js" ]] \
   echo "Expected client-side publication filtering to hide nonmatching cards."
   exit 1
 fi
+
+for publication_layout_rule in \
+  'max-width: 1200px;' \
+  'padding: var(--navbar-height) 20px 3.5rem;' \
+  'padding: 15px;' \
+  'font-size: 2rem;' \
+  'font-weight: 500;' \
+  'letter-spacing: normal;' \
+  'line-height: 1.6;' \
+  'margin: 20px 0;'; do
+  if ! rg -Fq "$publication_layout_rule" "$repo_root/assets/css/publications.css"; then
+    echo "Expected Publications layout rule: ${publication_layout_rule}"
+    exit 1
+  fi
+done
