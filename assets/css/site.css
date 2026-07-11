@@ -1,0 +1,4 @@
+:root { --color-bg: #f7f6f2; --color-text: #1d252d; --color-accent: #0b5f8a; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-bg); color: var(--color-text); }
+.site-shell { min-height: 100vh; }

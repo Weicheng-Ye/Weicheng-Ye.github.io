@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="{{ site.Language.Locale }}" dir="{{ site.Language.Direction }}">
+  <head>{{ partial "head.html" . }}</head>
+  <body class="kind-{{ .Kind }} section-{{ .Section | default "home" }}">
+    <div class="site-shell">
+      {{ partial "navigation.html" . }}
+      <main id="main-content" class="site-main">{{ block "main" . }}{{ end }}</main>
+      {{ partial "footer.html" . }}
+    </div>
+  </body>
+</html>
