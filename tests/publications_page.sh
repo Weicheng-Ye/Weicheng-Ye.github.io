@@ -51,15 +51,50 @@ if ! grep -Fq '<h1 id="publications">📝 Publications</h1>' "$output_dir/index.
   exit 1
 fi
 
-mathematics_line="$(grep -nE '<h2[^>]*>Mathematics</h2>' "$publication_page" | head -n 1 | cut -d: -f1 || true)"
-machine_learning_line="$(grep -nE '<h2[^>]*>Machine Learning</h2>' "$publication_page" | head -n 1 | cut -d: -f1 || true)"
-physics_line="$(grep -nE '<h2[^>]*>Physics</h2>' "$publication_page" | head -n 1 | cut -d: -f1 || true)"
+mathematics_line="$(grep -nE '<h2[^>]*>Mathematics</h2>' <<< "$publication_body" | head -n 1 | cut -d: -f1 || true)"
+machine_learning_line="$(grep -nE '<h2[^>]*>Machine Learning</h2>' <<< "$publication_body" | head -n 1 | cut -d: -f1 || true)"
+physics_line="$(grep -nE '<h2[^>]*>Physics</h2>' <<< "$publication_body" | head -n 1 | cut -d: -f1 || true)"
 
 if [[ -z "$mathematics_line" || -z "$machine_learning_line" || -z "$physics_line" ]] \
   || ! (( mathematics_line < machine_learning_line && machine_learning_line < physics_line )); then
   echo "Expected Mathematics, Machine Learning, and Physics headings in that order."
   exit 1
 fi
+
+assert_titles_in_section() {
+  local section="$1"
+  local lower_bound="$2"
+  local upper_bound="$3"
+  shift 3
+
+  for publication_title in "$@"; do
+    title_line="$(grep -nF "$publication_title" <<< "$publication_body" | cut -d: -f1 || true)"
+    if [[ -z "$title_line" ]] || ! (( title_line > lower_bound && title_line < upper_bound )); then
+      echo "Expected ${publication_title} in the ${section} section."
+      exit 1
+    fi
+  done
+}
+
+assert_titles_in_section "Mathematics" "$mathematics_line" "$machine_learning_line" \
+  'How to Build Anomalous (3+1)d Topological Quantum Field Theories' \
+  'Global structure in the presence of a topological defect' \
+  'Higher obstructions to conformal boundary conditions and lattice realizations' \
+  'Crystallography, Group Cohomology, and Lieb-Schultz-Mattis Constraints' \
+  'Bosonization and Anomaly Indicators of (2+1)-D Fermionic Topological Orders' \
+  'Complexity and order in approximate quantum error-correcting codes'
+
+assert_titles_in_section "Machine Learning" "$machine_learning_line" "$physics_line" \
+  'Universal quantum phase classification on quantum computers from machine learning'
+
+assert_titles_in_section "Physics" "$physics_line" "$(( $(wc -l <<< "$publication_body") + 1 ))" \
+  'Topological Holography for fermions' \
+  'Classification of symmetry-enriched topological quantum spin liquids' \
+  'Anomaly of (2+1)-Dimensional Symmetry-Enriched Topological Order from (3+1)-Dimensional Topological Quantum Field Theory' \
+  'Probing sign structure using measurement-induced entanglement' \
+  'Topological characterization of Lieb-Schultz-Mattis constraints and applications to symmetry-enriched quantum criticality' \
+  'Ultraviolet-Infrared Mixing in Marginal Fermi Liquids' \
+  'Quasinormal modes of Gauss-Bonnet black holes at large D'
 
 result_count="$( { grep -oF 'Result.' <<< "$publication_body" || true; } | wc -l | tr -d '[:space:]')"
 if [[ "$result_count" -ne 14 ]]; then
@@ -91,7 +126,7 @@ published_version_urls=(
 )
 
 for published_url in "${published_version_urls[@]}"; do
-  if ! grep -Fq "href=\"${published_url}\"" <<< "$publication_body"; then
+  if ! grep -Fq "href=\"${published_url}\" class=\"no-trailing-icon\" aria-label=\"Published version\"" <<< "$publication_body"; then
     echo "Expected published-version link ${published_url}."
     exit 1
   fi
@@ -118,5 +153,15 @@ fi
 
 if ! grep -Eq '(Journal of High Energy Physics|JHEP)[[:space:]]+0?1[[:space:]]*\(2016\)[[:space:]:,]*0?85' "$publication_page"; then
   echo "Expected the corrected JHEP 01 (2016) 085 citation."
+  exit 1
+fi
+
+if ! grep -Fq 'sign-free stabilizer states and sign-free two-qubit wavefunctions' "$repo_root/content/publications/_index.md"; then
+  echo "Expected the sign-structure result to state the proven scope precisely."
+  exit 1
+fi
+
+if ! grep -Fq 'Editors’ Suggestion' "$repo_root/content/publications/_index.md"; then
+  echo "Expected the APS designation Editors’ Suggestion."
   exit 1
 fi
