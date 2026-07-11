@@ -20,6 +20,7 @@ fi
 
 publication_page="$output_dir/publications/index.html"
 publication_body="$(sed '1,/<\/head>/d' "$publication_page")"
+publication_body="${publication_body//&#43;/+}"
 
 publication_titles=(
   'How to Build Anomalous (3+1)d Topological Quantum Field Theories'
@@ -51,54 +52,58 @@ if ! grep -Fq '<h1 id="publications">📝 Publications</h1>' "$output_dir/index.
   exit 1
 fi
 
-mathematics_line="$(grep -nE '<h2[^>]*>Mathematics</h2>' <<< "$publication_body" | head -n 1 | cut -d: -f1 || true)"
-machine_learning_line="$(grep -nE '<h2[^>]*>Machine Learning</h2>' <<< "$publication_body" | head -n 1 | cut -d: -f1 || true)"
-physics_line="$(grep -nE '<h2[^>]*>Physics</h2>' <<< "$publication_body" | head -n 1 | cut -d: -f1 || true)"
-
-if [[ -z "$mathematics_line" || -z "$machine_learning_line" || -z "$physics_line" ]] \
-  || ! (( mathematics_line < machine_learning_line && machine_learning_line < physics_line )); then
-  echo "Expected Mathematics, Machine Learning, and Physics headings in that order."
+if ! grep -Fq 'class="light-mode publications-layout"' "$publication_page"; then
+  echo "Expected the Publications page to use its full-width layout shell."
   exit 1
 fi
 
-assert_titles_in_section() {
-  local section="$1"
-  local lower_bound="$2"
-  local upper_bound="$3"
-  shift 3
+if grep -Fq 'class="profile-card' <<< "$publication_body"; then
+  echo "Did not expect the profile card on the Publications page."
+  exit 1
+fi
 
-  for publication_title in "$@"; do
-    title_line="$(grep -nF "$publication_title" <<< "$publication_body" | cut -d: -f1 || true)"
-    if [[ -z "$title_line" ]] || ! (( title_line > lower_bound && title_line < upper_bound )); then
-      echo "Expected ${publication_title} in the ${section} section."
-      exit 1
-    fi
-  done
-}
+if ! grep -Fq 'class="publications-page"' <<< "$publication_body"; then
+  echo "Expected the publications archive page marker."
+  exit 1
+fi
 
-assert_titles_in_section "Mathematics" "$mathematics_line" "$machine_learning_line" \
-  'How to Build Anomalous (3+1)d Topological Quantum Field Theories' \
-  'Global structure in the presence of a topological defect' \
-  'Higher obstructions to conformal boundary conditions and lattice realizations' \
-  'Crystallography, Group Cohomology, and Lieb-Schultz-Mattis Constraints' \
-  'Bosonization and Anomaly Indicators of (2+1)-D Fermionic Topological Orders' \
-  'Complexity and order in approximate quantum error-correcting codes'
+for filter_label in 'All (14)' 'Mathematical Physics (6)' 'Machine Learning (1)' 'Physics (7)'; do
+  if ! grep -Fq ">$filter_label</button>" <<< "$publication_body"; then
+    echo "Expected publication filter ${filter_label}."
+    exit 1
+  fi
+done
 
-assert_titles_in_section "Machine Learning" "$machine_learning_line" "$physics_line" \
-  'Universal quantum phase classification on quantum computers from machine learning'
+card_count="$( { grep -oF 'class="publication-card"' <<< "$publication_body" || true; } | wc -l | tr -d '[:space:]')"
+if [[ "$card_count" -ne 14 ]]; then
+  echo "Expected 14 publication cards; found ${card_count}."
+  exit 1
+fi
 
-assert_titles_in_section "Physics" "$physics_line" "$(( $(wc -l <<< "$publication_body") + 1 ))" \
-  'Topological Holography for fermions' \
-  'Classification of symmetry-enriched topological quantum spin liquids' \
-  'Anomaly of (2+1)-Dimensional Symmetry-Enriched Topological Order from (3+1)-Dimensional Topological Quantum Field Theory' \
-  'Probing sign structure using measurement-induced entanglement' \
-  'Topological characterization of Lieb-Schultz-Mattis constraints and applications to symmetry-enriched quantum criticality' \
-  'Ultraviolet-Infrared Mixing in Marginal Fermi Liquids' \
-  'Quasinormal modes of Gauss-Bonnet black holes at large D'
+for category_and_count in 'mathematical-physics:6' 'machine-learning:1' 'physics:7'; do
+  category="${category_and_count%%:*}"
+  expected_count="${category_and_count##*:}"
+  actual_count="$( { grep -oF "data-publication-category=\"${category}\"" <<< "$publication_body" || true; } | wc -l | tr -d '[:space:]')"
+  if [[ "$actual_count" -ne "$expected_count" ]]; then
+    echo "Expected ${expected_count} ${category} cards; found ${actual_count}."
+    exit 1
+  fi
+done
 
-result_count="$( { grep -oF 'Result.' <<< "$publication_body" || true; } | wc -l | tr -d '[:space:]')"
-if [[ "$result_count" -ne 14 ]]; then
-  echo "Expected 14 publication Result. descriptions; found $result_count."
+description_count="$( { grep -oF 'class="publication-card__description"' <<< "$publication_body" || true; } | wc -l | tr -d '[:space:]')"
+if [[ "$description_count" -ne 14 ]]; then
+  echo "Expected 14 italic publication descriptions; found ${description_count}."
+  exit 1
+fi
+
+link_group_count="$( { grep -oF 'class="publication-card__links" role="group" aria-label="Publication links"' <<< "$publication_body" || true; } | wc -l | tr -d '[:space:]')"
+if [[ "$link_group_count" -ne 14 ]]; then
+  echo "Expected 14 labelled publication link groups; found ${link_group_count}."
+  exit 1
+fi
+
+if grep -Fq 'Result.' <<< "$publication_body"; then
+  echo "Did not expect the Result. label on publication cards."
   exit 1
 fi
 
@@ -107,44 +112,36 @@ if ! grep -Fq 'Withdrawn' "$publication_page"; then
   exit 1
 fi
 
-published_version_link_count="$( { grep -oE '<a[^>]*aria-label="Published version"[^>]*>' <<< "$publication_body" || true; } | wc -l | tr -d '[:space:]')"
-if [[ "$published_version_link_count" -ne 9 ]]; then
-  echo "Expected nine published-version icon links; found $published_version_link_count."
+arxiv_link_count="$( { grep -oF 'publication-pill--arxiv' <<< "$publication_body" || true; } | wc -l | tr -d '[:space:]')"
+if [[ "$arxiv_link_count" -ne 14 ]]; then
+  echo "Expected fourteen arXiv link pills; found ${arxiv_link_count}."
   exit 1
 fi
 
-published_version_urls=(
-  'https://doi.org/10.21468/SciPostPhys.18.5.161'
-  'https://doi.org/10.1007/s00220-025-05344-z'
-  'https://doi.org/10.1038/s41567-024-02621-x'
-  'https://doi.org/10.1103/PhysRevX.14.021053'
-  'https://doi.org/10.21468/SciPostPhys.15.1.004'
-  'https://doi.org/10.22331/q-2023-02-02-910'
-  'https://doi.org/10.21468/SciPostPhys.13.3.066'
-  'https://doi.org/10.1103/PhysRevLett.128.106402'
-  'https://doi.org/10.1007/JHEP01(2016)085'
-)
+published_link_count="$( { grep -oF 'publication-pill--journal' <<< "$publication_body" || true; } | wc -l | tr -d '[:space:]')"
+if [[ "$published_link_count" -ne 9 ]]; then
+  echo "Expected nine journal link pills; found ${published_link_count}."
+  exit 1
+fi
 
-for published_url in "${published_version_urls[@]}"; do
-  if ! grep -Fq "href=\"${published_url}\" class=\"no-trailing-icon\" aria-label=\"Published version\"" <<< "$publication_body"; then
-    echo "Expected published-version link ${published_url}."
+for journal_label in 'SciPost Physics' 'Communications in Mathematical Physics' 'Nature Physics' 'Physical Review X' 'Quantum' 'Physical Review Letters' 'Journal of High Energy Physics'; do
+  if ! grep -Fq ">$journal_label</a>" <<< "$publication_body"; then
+    echo "Expected visible journal link pill ${journal_label}."
     exit 1
   fi
 done
 
 for repository_label in SpaceGroupCohomology Classification-of-QSL Classification-of-Stiefel-Liquid; do
-  if ! grep -Fq "alt=\"GitHub-${repository_label}\"" <<< "$publication_body"; then
-    echo "Expected the GitHub link label ${repository_label}."
+  if ! grep -Fq ">$repository_label</a>" <<< "$publication_body"; then
+    echo "Expected the repository link label ${repository_label}."
     exit 1
   fi
 done
 
-for obsolete_label in LSM3D TQSL StiefelLiquid; do
-  if grep -Fq "$obsolete_label" "$publication_page"; then
-    echo "Did not expect obsolete GitHub label ${obsolete_label}."
-    exit 1
-  fi
-done
+if grep -Fq 'img.shields.io/badge' <<< "$publication_body"; then
+  echo "Did not expect badge images on publication cards."
+  exit 1
+fi
 
 if ! grep -Eq 'SciPost Physics[[:space:]]+18,[[:space:]]*161[[:space:]]*\(2025\)' "$publication_page"; then
   echo "Expected the corrected SciPost Physics 18, 161 (2025) citation."
@@ -163,5 +160,11 @@ fi
 
 if ! grep -Fq 'Editors’ Suggestion' "$repo_root/content/publications/_index.md"; then
   echo "Expected the APS designation Editors’ Suggestion."
+  exit 1
+fi
+
+if [[ ! -f "$repo_root/assets/js/publications.js" ]] \
+  || ! rg -q 'card.hidden = category !== "all"' "$repo_root/assets/js/publications.js"; then
+  echo "Expected client-side publication filtering to hide nonmatching cards."
   exit 1
 fi
