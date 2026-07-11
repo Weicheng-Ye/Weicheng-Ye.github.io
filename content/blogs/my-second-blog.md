@@ -5,8 +5,6 @@ draft: false
 summary: "Updates on my research, including quantum physics developments, mathematical concepts, and academic collaborations."
 ---
 
-# My Second Blog Post
-
 This is my second blog post where I'll share more about my research and experiences.
 
 ## Research Updates
@@ -29,4 +27,4 @@ I'm planning to write about:
 3. Teaching and mentoring experiences
 4. Book recommendations for physics students
 
-Stay tuned for more updates! 
+Stay tuned for more updates!

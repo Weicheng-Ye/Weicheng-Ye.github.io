@@ -2,7 +2,7 @@
 <header class="page-header"><p class="eyebrow">Writing</p><h1>{{ .Title }}</h1>{{ with .Description }}<p>{{ . }}</p>{{ end }}</header>
 <ol class="post-list">
   {{ range .RegularPages.ByDate.Reverse }}
-    <li><article><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time><h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ with .Summary }}<p>{{ . }}</p>{{ end }}</article></li>
+    <li><article><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time><h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>{{ with .Params.summary }}<p>{{ . }}</p>{{ end }}</article></li>
   {{ end }}
 </ol>
 {{ end }}

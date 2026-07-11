@@ -11,6 +11,11 @@ assert_file() { [[ -f "$1" ]] || fail "missing file $1"; }
 assert_contains() { rg -q --fixed-strings -- "$2" "$1" || fail "$1 does not contain $2"; }
 assert_not_contains() { ! rg -q "$2" "$1" || fail "$1 unexpectedly contains $2"; }
 assert_not_contains_fixed() { ! rg -q --fixed-strings -- "$2" "$1" || fail "$1 unexpectedly contains $2"; }
+assert_count() {
+  local count
+  count="$(rg -o --fixed-strings -- "$2" "$1" | wc -l | tr -d ' ')" || true
+  [[ "$count" = "$3" ]] || fail "$1 expected $3 occurrences of $2, found $count"
+}
 
 build_site() {
   hugo --source "$repo_root" --destination "$output" --environment production --cleanDestinationDir --panicOnWarning
@@ -34,11 +39,32 @@ check_structure() {
   assert_not_contains "$output/index.html" 'localhost|livereload|googleapis|cdnjs|jsdelivr'
 }
 
+check_blogs() {
+  for path in blogs/my-first-blog/index.html blogs/my-second-blog/index.html; do
+    assert_file "$output/$path"
+    assert_count "$output/$path" '<h1' 1
+  done
+  assert_contains "$output/blogs/index.html" 'Welcome to my blog where I share insights about quantum physics, mathematics, and academic life.'
+  assert_contains "$output/blogs/index.html" 'Updates on my research, including quantum physics developments, mathematical concepts, and academic collaborations.'
+  assert_not_contains_fixed "$output/blogs/index.html" '<p><h1'
+  assert_not_contains "$output/blogs/index.html" '<p>[[:space:]]*<p>'
+  assert_not_contains_fixed "$output/blogs/index.html" 'This is my first blog post.'
+  assert_not_contains_fixed "$output/blogs/index.html" "This is my second blog post where I'll share more about my research and experiences."
+  assert_contains "$output/blogs/my-first-blog/index.html" '<meta name="description" content="Welcome to my blog where I share insights about quantum physics, mathematics, and academic life.">'
+  assert_contains "$output/blogs/my-second-blog/index.html" '<meta name="description" content="Updates on my research, including quantum physics developments, mathematical concepts, and academic collaborations.">'
+}
+
 check_publications() {
   assert_file "$output/publications/index.html"
   assert_file "$output/zh/publications/index.html"
-  count="$(rg -o 'class="publication-entry"' "$output/publications/index.html" | wc -l | tr -d ' ')"
-  [[ "$count" = 14 ]] || fail "expected 14 publication entries, found $count"
+  for path in publications/index.html zh/publications/index.html; do
+    assert_count "$output/$path" 'class="publication-year"' 5
+    assert_count "$output/$path" 'aria-labelledby="year-' 5
+    assert_count "$output/$path" '<ol>' 5
+    assert_count "$output/$path" 'class="publication-entry"' 14
+    assert_count "$output/$path" '<article>' 14
+    assert_count "$output/$path" '<strong>Weicheng Ye</strong>' 14
+  done
   assert_contains "$output/publications/index.html" 'How to Build Anomalous (3+1)d Topological Quantum Field Theories'
   assert_contains "$output/publications/index.html" 'Quasinormal modes of Gauss-Bonnet black holes at large D'
   assert_contains "$output/publications/index.html" 'https://github.com/Weicheng-Ye/Classification-of-QSL'
@@ -73,11 +99,11 @@ check_repository() {
 }
 
 case "$mode" in
-  structure) build_site; check_structure ;;
+  structure) build_site; check_structure; check_blogs ;;
   publications) build_site; check_publications ;;
   presentation) build_site; check_presentation ;;
   repository) check_repository ;;
-  all) build_site; check_structure; check_publications; check_presentation; check_repository ;;
+  all) build_site; check_structure; check_blogs; check_publications; check_presentation; check_repository ;;
   *) fail "unknown mode $mode" ;;
 esac
 

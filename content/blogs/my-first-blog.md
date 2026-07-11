@@ -5,8 +5,6 @@ draft: false
 summary: "Welcome to my blog where I share insights about quantum physics, mathematics, and academic life."
 ---
 
-# Welcome to My Blog
-
 This is my first blog post. Here I will share my thoughts and experiences about:
 
 - Research in quantum physics
@@ -25,4 +23,4 @@ I believe that sharing knowledge and experiences is crucial for scientific progr
 3. Connect with fellow researchers and students
 4. Document my academic journey
 
-Stay tuned for more posts! 
+Stay tuned for more posts!
