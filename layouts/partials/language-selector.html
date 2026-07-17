@@ -7,13 +7,13 @@
         {{ if gt (len $pageTranslations) 1 }}
             {{ range $pageTranslations }}
             <option value="{{ .Permalink }}" {{ if eq $currentLang .Lang }}selected{{ end }}>
-                {{ .Language.LanguageName }}
+                {{ .Site.Params.languageLabel }}
             </option>
             {{ end }}
         {{ else }}
             {{ range .Site.Home.AllTranslations }}
             <option value="{{ .Permalink }}" {{ if eq $currentLang .Lang }}selected{{ end }}>
-                {{ .Language.LanguageName }}
+                {{ .Site.Params.languageLabel }}
             </option>
             {{ end }}
         {{ end }}

@@ -18,11 +18,14 @@ publications:
     title: "Global structure in the presence of a topological defect"
     title_url: "https://arxiv.org/abs/2501.18399"
     authors: "Arun Debray, **Weicheng Ye**, and Matthew Yu"
-    citation: "arXiv preprint (2025)."
+    citation: "Communications in Mathathematical Physics 407, 159 (2026)."
     description: "By relating the Pontryagin–Thom construction to topological defects, we derive tools for tracking how global structure constrains defects and their ambient manifolds. We apply them to higher-form symmetry breaking."
     arxiv:
       label: "arXiv"
       url: "https://arxiv.org/abs/2501.18399"
+    published:
+      label: "Communications in Mathematical Physics"
+      url: "https://doi.org/10.1007/s00220-026-05629-x"
 
   - categories:
       - mathematical-physics

@@ -18,11 +18,14 @@ publications:
     title: "Global structure in the presence of a topological defect"
     title_url: "https://arxiv.org/abs/2501.18399"
     authors: "Arun Debray, **Weicheng Ye**, and Matthew Yu"
-    citation: "arXiv 预印本（2025）。"
+    citation: "Communications in Mathathematical Physics 407, 159 (2026)."
     description: "通过将 Pontryagin–Thom 构造与拓扑缺陷联系起来，我们导出了追踪整体结构如何约束缺陷及其所在流形的工具，并将其应用于高阶形式对称性破缺。"
     arxiv:
       label: "arXiv"
       url: "https://arxiv.org/abs/2501.18399"
+    published: 
+      label: "Communications in Mathematical Physics"
+      url: "https://doi.org/10.1007/s00220-026-05629-x"
 
   - categories:
       - mathematical-physics

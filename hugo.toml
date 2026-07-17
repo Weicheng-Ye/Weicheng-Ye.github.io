@@ -16,12 +16,12 @@ disableKinds = ["taxonomy", "term", "RSS"]
 
 [languages]
   [languages.en]
-    languageName = 'English'
     weight = 1
     title = 'Zero'
     customCSS = ["css/custom.css"]
 
     [languages.en.params]
+      languageLabel = "English"
       author = "Weicheng (Victor) Ye"
       description = "Postdoctoral Fellow at the Chinese University of Hong Kong"
       motto = "Mathematics, Physics, and Computer Science"
@@ -44,12 +44,12 @@ disableKinds = ["taxonomy", "term", "RSS"]
       weight = 4
       
   [languages.zh]
-    languageName = '中文'
     weight = 2
     title = '叶伟成的个人主页'
     customCSS = ["css/custom.css"]
     
     [languages.zh.params]
+      languageLabel = "中文"
       author = "叶伟成"
       description = "香港中文大学博士后研究员"
       motto = "数学、物理与计算机科学"
