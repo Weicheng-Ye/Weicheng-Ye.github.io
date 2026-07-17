@@ -1,5 +1,5 @@
 ---
 title: "Blogs"
-intro: "Notes, ideas, and updates. The entries below are placeholders that you can replace with your own writing."
+intro: "Research notes on AI, mathematics, physics, and the practice of scientific inquiry."
 layout: "archive"
 ---
