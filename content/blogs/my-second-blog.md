@@ -1,13 +1,11 @@
 ---
-title: "A Comprehensive Directory of Open Problems in Analysis, Geometry, Topology, and Algebra"
+title: "A Library of Open Problems in Mathematics"
 date: 2026-07-18
 draft: false
-summary: "A link-first directory of open-problem collections spanning analysis, geometry, topology, and algebra."
+summary: "A collection of links of open problems in mathematics, spanning analysis, geometry, topology, and algebra."
 ---
 
-Open problems are scattered across institute pages, workshop notes, books, surveys, personal webpages, and community wikis. This post collects the most useful gateways I could find, followed by specialist lists in analysis, geometry, topology, and algebra; each entry gets only one sentence so that the page remains a working directory rather than another survey.
-
-**Scope and status note (checked July 18, 2026):** “Comprehensive” here means broad coverage of reputable problem resources, not every open question in modern mathematics, and inclusion does not imply that every problem in an older list is still open—check the source's updates and the current literature before starting work.
+This post collects links to open mathematical problems that I can find on the Internet.
 
 <!--more-->
 
