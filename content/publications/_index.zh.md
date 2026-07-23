@@ -1,6 +1,6 @@
 ---
 title: "发表论文"
-intro: "涵盖数学物理、量子物理、机器学习和理论物理的部分研究论文。"
+intro: "涵盖数学物理、量子物理、人工智能和理论物理的部分研究论文。"
 publications:
   - categories:
       - mathematical-physics
@@ -88,7 +88,7 @@ publications:
       url: "https://doi.org/10.1038/s41567-024-02621-x"
 
   - categories:
-      - machine-learning
+      - artificial-intelligence
       - quantum-physics
     title: "Universal quantum phase classification on quantum computers from machine learning"
     title_url: "https://arxiv.org/abs/2508.04774"

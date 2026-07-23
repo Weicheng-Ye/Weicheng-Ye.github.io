@@ -1,6 +1,6 @@
 ---
 title: "Publications"
-intro: "A selection of research papers across mathematical physics, quantum physics, machine learning, and theoretical physics."
+intro: "A selection of research papers across mathematical physics, quantum physics, artificial intelligence, and theoretical physics."
 publications:
   - categories:
       - mathematical-physics
@@ -88,7 +88,7 @@ publications:
       url: "https://doi.org/10.1038/s41567-024-02621-x"
 
   - categories:
-      - machine-learning
+      - artificial-intelligence
       - quantum-physics
     title: "Universal quantum phase classification on quantum computers from machine learning"
     title_url: "https://arxiv.org/abs/2508.04774"

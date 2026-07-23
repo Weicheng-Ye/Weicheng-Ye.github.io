@@ -12,7 +12,7 @@
             <p class="archive-card__eyebrow">{{ .date }}</p>
             <h2>{{ .title }}</h2>
             {{ with .presenter }}<p class="archive-card__meta">{{ . }}</p>{{ end }}
-            <p class="archive-card__meta">{{ .event }} · {{ .location }}</p>
+            <p class="archive-card__meta">{{ .event }}{{ with .location }} · {{ . }}{{ end }}</p>
             <p class="archive-card__description">{{ .description }}</p>
             {{ if or .url .youtube }}
             <div class="archive-card__links">

@@ -2,10 +2,10 @@
 {{ $publications := where .Params.publications "hidden" "ne" true }}
 {{ $mathematicalPhysics := where $publications "categories" "intersect" (slice "mathematical-physics") }}
 {{ $quantumPhysics := where $publications "categories" "intersect" (slice "quantum-physics") }}
-{{ $machineLearning := where $publications "categories" "intersect" (slice "machine-learning") }}
+{{ $artificialIntelligence := where $publications "categories" "intersect" (slice "artificial-intelligence") }}
 {{ $theoreticalPhysics := where $publications "categories" "intersect" (slice "theoretical-physics") }}
 {{ $isChinese := eq .Site.Language.Lang "zh" }}
-{{ $categoryNames := dict "mathematical-physics" (cond $isChinese "数学物理" "Mathematical Physics") "machine-learning" (cond $isChinese "机器学习" "Machine Learning") "quantum-physics" (cond $isChinese "量子物理" "Quantum Physics") "theoretical-physics" (cond $isChinese "理论物理" "Theoretical Physics") }}
+{{ $categoryNames := dict "mathematical-physics" (cond $isChinese "数学物理" "Mathematical Physics") "artificial-intelligence" (cond $isChinese "人工智能" "Artificial Intelligence") "quantum-physics" (cond $isChinese "量子物理" "Quantum Physics") "theoretical-physics" (cond $isChinese "理论物理" "Theoretical Physics") }}
 
 <article class="publications-page">
     <div class="publications-page__header">
@@ -17,7 +17,7 @@
         <button class="publication-filter is-active" type="button" data-publication-filter="all" aria-pressed="true">{{ if $isChinese }}全部{{ else }}All{{ end }} ({{ len $publications }})</button>
         <button class="publication-filter" type="button" data-publication-filter="mathematical-physics" aria-pressed="false">{{ index $categoryNames "mathematical-physics" }} ({{ len $mathematicalPhysics }})</button>
         <button class="publication-filter" type="button" data-publication-filter="quantum-physics" aria-pressed="false">{{ index $categoryNames "quantum-physics" }} ({{ len $quantumPhysics }})</button>
-        <button class="publication-filter" type="button" data-publication-filter="machine-learning" aria-pressed="false">{{ index $categoryNames "machine-learning" }} ({{ len $machineLearning }})</button>
+        <button class="publication-filter" type="button" data-publication-filter="artificial-intelligence" aria-pressed="false">{{ index $categoryNames "artificial-intelligence" }} ({{ len $artificialIntelligence }})</button>
         <button class="publication-filter" type="button" data-publication-filter="theoretical-physics" aria-pressed="false">{{ index $categoryNames "theoretical-physics" }} ({{ len $theoreticalPhysics }})</button>
     </div>
 
