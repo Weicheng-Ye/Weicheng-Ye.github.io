@@ -7,13 +7,101 @@ summary: "A complete reconstruction of the 3D knight path, tower placement, scor
 
 Jane Street's July 2026 puzzle, [“Pent-Up” Frustration 3 / Knight Moves 7](https://www.janestreet.com/puzzles/pent-up-frustration-3-knight-moves-7-index/), combines a pentomino tiling, a knight moving in three dimensions, and a score whose update rule depends on whether the knight moves up, down, or stays level.
 
-The unique solution has checkpoint interval **K = 7**. The thirteenth and final tower is at **h6**, where the score becomes **59,400**, and the answer requested by the puzzle is
-
-<p style="text-align:center;font-size:1.35em"><strong>33,609</strong>.</p>
-
 This post gives the full reconstruction. Everything below is a spoiler.
 
 <!--more-->
+
+<style>
+  article.single-page .highlight {
+    width: fit-content;
+    max-width: 100%;
+    margin: 1.25rem auto;
+  }
+
+  article.single-page .highlight pre {
+    box-sizing: border-box;
+    max-width: 100%;
+    margin: 0;
+    padding: 1rem 1.2rem;
+    overflow-x: auto;
+    color: #292b2f !important;
+    background: #f8f7f3 !important;
+    border: 1px solid #dedbd2;
+    border-radius: 0.55rem;
+    box-shadow: 0 0.3rem 1rem rgba(35, 31, 24, 0.06);
+  }
+
+  article.single-page .highlight code,
+  article.single-page .highlight code span {
+    color: inherit !important;
+  }
+
+  article.single-page table {
+    margin: 1.4rem auto;
+    border: 1px solid #8a867d;
+    border-collapse: collapse;
+    background: #ffffff;
+  }
+
+  article.single-page table th,
+  article.single-page table td {
+    padding: 0.65rem 0.8rem;
+    border: 1px solid #8a867d;
+    vertical-align: middle;
+  }
+
+  article.single-page table thead th {
+    color: #25272b;
+    background: #f1efe8;
+    font-weight: 700;
+  }
+
+  article.single-page table tbody tr:nth-child(even) {
+    background: #faf9f5;
+  }
+
+  article.single-page .solution-table-scroll {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 1.4rem auto;
+    overflow-x: auto;
+  }
+
+  article.single-page .solution-table-scroll table {
+    min-width: max-content;
+    margin: 0;
+  }
+
+  body.dark-mode article.single-page .highlight pre {
+    color: #eef0f3 !important;
+    background: #272a30 !important;
+    border-color: #3d424a;
+    box-shadow: none;
+  }
+
+  body.dark-mode article.single-page table {
+    color: #eef0f3;
+    background: #24272d;
+    border-color: #737b87;
+  }
+
+  body.dark-mode article.single-page table th,
+  body.dark-mode article.single-page table td {
+    border-color: #737b87;
+  }
+
+  body.dark-mode article.single-page table thead th {
+    color: #f5f6f8;
+    background: #30343b;
+  }
+
+  body.dark-mode article.single-page table tbody tr:nth-child(even) {
+    background: #2a2e35;
+  }
+</style>
+
+## Question
 
 <figure>
   <a href="https://www.janestreet.com/puzzles/pent-up-frustration-3-knight-moves-7-index/">
@@ -23,6 +111,18 @@ This post gives the full reconstruction. Everything below is a spoiler.
   </a>
   <figcaption>The original puzzle board. Coordinates in this solution use a1 for the bottom-left square. Image source: Jane Street.</figcaption>
 </figure>
+
+The board above has been tiled with the 12 pentominoes (plus a 2-by-2 tetromino) into 13 regions. Think of each of these 13 regions as constructed out of 1-by-1-by-1 cubes. We need to add a tower to each region. A tower is an additional size-1 cube placed on one of a region’s squares.
+
+After adding these towers, place a knight at the bottom-left square. It then proceeds to make knight’s moves until it has visited all the towers. It never visits the same space twice. (A move on this board involves travelling 0 units in one dimension, 1 in another, and 2 in the third. The knight is allowed to “pass through” towers as it moves.)
+
+But there’s a catch: As you can see, the knight starts with a score of 0. On its Nth move, its score increases by N if the move is to a location at the same altitude as the square it moved from. If, instead, it moves up, the score is multiplied by N. And finally, if it moves down, the score is divided by N. This last type of move is only allowed if the score is evenly divisible by N.
+
+Every three moves, up until move #18, the knight wrote down its score upon arriving at a given square. From then on it only wrote down its score every K moves, for some larger value K. Using this information, can you reconstruct the knight’s path?
+
+
+
+After filling all the remaining visited squares with the missing score values, find the unvisited squares. For each of these squares, compute the sum of the scores in any orthogonally adjacent squares that were part of the knight’s path. The answer to this puzzle is the sum of these “neighbor sums” from the unvisited squares.
 
 ## 1. Reading the board correctly
 
@@ -59,8 +159,6 @@ a1* → c2* → e3* → g3
 ```
 
 where an asterisk marks a tower. The third move goes from e3 to g3 with displacement `(2, 0, −1)`: e3 is a tower top and g3 is at ground level. Since the first two moves stay at the same altitude, a1 and c2 must also be tower tops.
-
-This resolves a potentially confusing feature of the diagram. The `1` printed at g3 is its recorded score, not its altitude. Likewise, f3 and e3 lie in the same F-shaped region, but only e3 is its tower; the printed `272` at f3 is another score checkpoint.
 
 ## 3. Reconstructing the early checkpoints
 
@@ -196,7 +294,7 @@ There is exactly one tower in each of the twelve pentomino regions and one in th
 
 Filling each visited square with its score gives the following board. An asterisk marks a tower, and an em dash marks an unvisited square.
 
-<div style="display:block;max-width:100%;overflow-x:auto" role="region" aria-label="Completed score grid" tabindex="0">
+<div class="solution-table-scroll" role="region" aria-label="Completed score grid" tabindex="0">
   <table>
     <thead>
       <tr>
@@ -243,11 +341,9 @@ For each unvisited square, the puzzle asks for the sum of the scores in its orth
 Finally,
 
 ```text
-44 + 574 + 1,436 + 2,012 + 1,646 + 1,890
-   + 9,925 + 8,392 + 7,690
-= 33,609.
+44 + 574 + 1,436 + 2,012 + 1,646 + 1,890 + 9,925 + 8,392 + 7,690 = 33,609.
 ```
 
-So the answer to Jane Street's Knight Moves 7 is
+So the unique solution has checkpoint interval **K = 7**. The thirteenth and final tower is at **h6**, where the score becomes **59,400**, and the answer requested by the puzzle is
 
 <p style="text-align:center;font-size:1.35em"><strong>33,609</strong>.</p>
