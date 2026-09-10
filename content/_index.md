@@ -14,6 +14,8 @@ Hi, I am Weicheng Ye 👋 Nice to meet you!
 
 -- Agentic math/physics/quant
 
+-- Mathematical physics
+
 💬 I love traveling and meeting new friends! Let's chat when we are in the same city!
 
 <!-- 📝 Check out my [blog](/blogs) for more thoughts and updates! -->
